@@ -16,7 +16,7 @@
     color: white;
     a{
         color: white;
-        font-size: small;
+        font-size: large;
     }
     a:hover{
         color: yellow;
@@ -27,8 +27,11 @@
     background-color: #887BC6;
 }
 
-img{
+.logo{
     width: 8vw;
     margin-right: 10vw;
     margin-left: 5vw;
+}
+svg{
+    margin-right: 2vw;
 }

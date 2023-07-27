@@ -9,6 +9,16 @@ img{
 //     background-color: #887BC6;
 //     padding: 10px;
 // }
+.masInfo0 {
+    left: 77%;
+    top: 80%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    padding-left: 75px;
+    padding-right: 75px;
+    background-color: #FFE92F;
+}
 #tipoUsuario{
     position: relative;
     display: block;
@@ -66,8 +76,8 @@ img{
     border-radius: 10%;
 }
 .rowBlog{
-    padding-left: 5vw;
-    padding-right: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 .colBlog{
     padding: 2vw;
@@ -94,6 +104,12 @@ img{
         padding-right: 75px;
         background-color: #FFE92F;
     }
+.qrcode{
+    left: 51%;
+    top: 40%;
+    position: absolute;
+
+}
 #clientes{
     background-color: white;
 }

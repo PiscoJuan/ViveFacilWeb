@@ -1,15 +1,314 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.scss']
 })
-export class FormularioComponent implements OnInit {
+export class FormularioComponent {
+  generos = ['Masculino', 'Femenino', 'Otro'];
+  ciudades = ['Guayaquil', 'Quito', 'Cuenca', 'Sto. Domingo', 'Ibarra'];
+  tipoCuentas = ['Ahorro', 'Corriente'];
+  licencia = ['Si', 'No'];
+  profesiones: string[] = [];
+  total = 0
+  arr_pendiente!: any[];
+  arr_filtered_pendiente!: any[];
+  condicionNext = false
+  currentPage = 1
+  pageNumber: number[] = [];
+  pendiente_seleccionada: any
+  existImageCrear = false; existImageActualizar = false;
+  activo = ''
+  activoCond = false
+  mensajeAlerta: string = '';
+  isAceptar = true; isNegar = true;
+  habilitar = ''
+  mostrar1=false;
+  mostrar2=false;
+  fileImgPerfil: File| null = null;
+  filePDF: File| null = null;
+  filePDF2: File| null = null;
+  filePDF3: File| null = null;
+  copiaCedulaNombre= null;
+  copiaLicenciaNombre= null;
+  copiaDocumentosNombre= null;
+  // imgPerfil: string| null = null;
+  
+  formEdit: FormGroup = new FormGroup({
+    nombre: new FormControl('', [Validators.required]),
+    apellidos: new FormControl('', [Validators.required]),
+    correo: new FormControl('', [Validators.required, Validators.email]),
+    cedula: new FormControl('',
+      [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(10)
+      ]),
+    telefono: new FormControl('',
+      [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(10)
+      ]),
+    ciudad: new FormControl('', [Validators.required]),
+    direccion: new FormControl('', [Validators.required]),
+    genero: new FormControl('', [Validators.required]),
+    profesion: new FormControl('', [Validators.required]),
+    licencia: new FormControl('', [Validators.required]),
+    copiaCedula: new FormControl(this.filePDF),
+    tipo_cuenta: new FormControl('', [Validators.required]),
+    numero_cuenta: new FormControl('', [Validators.required]),
+    banco: new FormControl('', [Validators.required]),
+    ano_experiencia: new FormControl('', [Validators.required]),
+    copiaLicencia: new FormControl(this.filePDF2),
+    documentos: new FormControl(''),
+    descripcion: new FormControl(''),
+    foto: new FormControl(this.fileImgPerfil),
+    filesDocuments: new FormControl([this.filePDF3]),
+    // foto: new FormControl('', [Validators.required]),
+  });
+  constructor(private sanitizer: DomSanitizer) {
+    
+   }
 
-  constructor() { }
 
-  ngOnInit(): void {
+
+   onAceptar() {
+    console.log(this.formEdit.value)
+    let pendiente: any = {
+      nombres: this.formEdit.value.nombre,
+      apellidos: this.formEdit.value.apellidos,
+      genero: this.formEdit.value.genero,
+      telefono: this.formEdit.value.telefono,
+      cedula: this.formEdit.value.cedula,
+      copiaCedula: this.formEdit.value.copiaCedula,
+      ciudad: this.formEdit.value.ciudad,
+      direccion: this.formEdit.value.direccion,
+      email: this.formEdit.value.correo,
+      descripcion: this.formEdit.value.descripcion,
+      licencia: this.formEdit.value.licencia,
+      copiaLicencia: this.formEdit.value.copiaLicencia,
+      profesion: this.formEdit.value.profesion,
+      ano_experiencia: this.formEdit.value.ano_experiencia,
+      banco: this.formEdit.value.banco,
+      numero_cuenta: this.formEdit.value.numero_cuenta,
+      tipo_cuenta: this.formEdit.value.tipo_cuenta,
+      foto: this.formEdit.value.foto,
+      planilla_servicios: this.formEdit.value.filesDocuments
+    }
+    
+    console.log(pendiente)
+
+  }
+   establecerMensaje(mensaje: string, tipo: string) {
+    if (tipo === 'aceptar') {
+      this.isAceptar = true;
+      this.isNegar = false;
+    }
+    else if (tipo === 'negar') {
+      this.isAceptar = false;
+      this.isNegar = true;
+    } else if (tipo === 'actualizar') {
+      this.isAceptar = false;
+      this.isNegar = false;
+    }
+    this.mensajeAlerta = mensaje;
+  }
+  
+  isInvalidForm(subForm: string) {
+
+
+    return this.formEdit.get(subForm)?.invalid && this.formEdit.get(subForm)?.touched || this.formEdit.get(subForm)?.dirty && this.getErrorMessage(this.formEdit, subForm).length !== 0;
+
   }
 
+  getErrorMessage(formGroup: FormGroup, item: string): string {
+    const itemControl: FormControl = formGroup.get(item) as FormControl;
+    switch (item) {
+
+      case 'nombre':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+
+      case 'apellidos':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+
+      case 'cedula':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'telefono':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'licencia':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'genero':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'copiaCedula':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'ciudad':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'descripcion':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'correo':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'tipo_cuenta':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'numero_cuenta':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'ano_experiencia':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'profesion':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'ano_experiencia':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      case 'descripcion':
+        if (itemControl.hasError('required')) {
+          return 'Debe llenar este campo';
+        }
+        return '';
+      default:
+        return '';
+    }
+  }
+  loadPdf3FromDevice(event:any) {
+    const file: File = event.target.files[0];
+    if(file){
+      this.extraerBase64(file)
+      .then((imagen: any) => {
+        this.formEdit.value.copiaLicencia=file;
+        this.filePDF3 = file;
+        // this.imgPerfil = imagen.base;
+      })
+      .catch(err => console.log(err));
+    }
+  };
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve({
+          blob: $event,
+          image,
+          base: reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          blob: $event,
+          image,
+          base: null
+        });
+      };
+      return null;
+
+    } catch (e) {
+      return null;
+    }
+  });
+
+  loadImageFromDevice(event:any) {
+    const file: File = event.target.files[0];
+    if(file){
+      this.extraerBase64(file)
+      .then((imagen: any) => {
+        this.formEdit.value.foto=file;
+        this.fileImgPerfil = file;
+        // this.imgPerfil = imagen.base;
+      })
+      .catch(err => console.log(err));
+    }
+  };
+
+  numberOnly(event:any): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
+  numberOnlyPluss(event:any): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode != 43 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
+  loadPdfFromDevice(event:any) {
+    const file: File = event.target.files[0];
+    console.log("Archivo de Copia de Cedula")
+    console.log(event.target.files)
+    if(file){
+      this.extraerBase64(file)
+      .then((imagen: any) => {
+        this.formEdit.value.copiaCedula=file;
+        this.filePDF = file;
+        // this.imgPerfil = imagen.base;
+      })
+      .catch(err => console.log(err));
+    }
+  };
+
+
+  loadPdf2FromDevice(event:any) {
+    const file: File = event.target.files[0];
+    console.log("Archivo de Copia de Licencia")
+    console.log(event.target.files)
+    if(file){
+      this.extraerBase64(file)
+      .then((imagen: any) => {
+        this.formEdit.value.copiaLicencia=file;
+        this.filePDF2 = file;
+        // this.imgPerfil = imagen.base;
+      })
+      .catch(err => console.log(err));
+    }
+  };
 }

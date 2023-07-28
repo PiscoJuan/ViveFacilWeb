@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FormularioService } from '../servicios/formulario.service';
 
 @Component({
   selector: 'app-formulario',
@@ -12,7 +13,7 @@ export class FormularioComponent {
   ciudades = ['Guayaquil', 'Quito', 'Cuenca', 'Sto. Domingo', 'Ibarra'];
   tipoCuentas = ['Ahorro', 'Corriente'];
   licencia = ['Si', 'No'];
-  profesiones: string[] = [];
+  profesiones: any[] = [];
   total = 0
   arr_pendiente!: any[];
   arr_filtered_pendiente!: any[];
@@ -70,11 +71,14 @@ export class FormularioComponent {
     filesDocuments: new FormControl([this.filePDF3]),
     // foto: new FormControl('', [Validators.required]),
   });
-  constructor(private sanitizer: DomSanitizer) {
-    
+  constructor(private sanitizer: DomSanitizer, private formService: FormularioService,) {
+    this.formService.obtener_profesiones().subscribe((resp: any) => {
+      console.log(resp)
+        this.profesiones= resp
+    }); 
    }
 
-
+   
 
    onAceptar() {
     console.log(this.formEdit.value)
@@ -101,6 +105,10 @@ export class FormularioComponent {
     }
     
     console.log(pendiente)
+
+    this.formService.crear_proveedor_pendiente(pendiente).subscribe((resp: any) => {
+      console.log(resp)
+    })
 
   }
    establecerMensaje(mensaje: string, tipo: string) {

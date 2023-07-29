@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { HomeComponent } from './home/home.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
+import { ComoFuncionaComponent } from './como-funciona/como-funciona.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NosotrosComponent,
-    FormularioComponent
+    FormularioComponent,
+    ComoFuncionaComponent
   ],
   imports: [
     BrowserModule,

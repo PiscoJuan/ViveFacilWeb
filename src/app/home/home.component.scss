@@ -135,3 +135,13 @@ img{
     font-size:10vh;
     src: url('/assets/Milton Keynes.ttf') format('truetype');
 }
+
+.icon {
+
+  }
+
+  .column{
+    display: flex;
+    flex-flow: wrap;
+    justify-content:space-evenly;
+  }

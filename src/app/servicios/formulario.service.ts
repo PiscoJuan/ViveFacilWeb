@@ -14,4 +14,7 @@ export class FormularioService {
   crear_proveedor_pendiente(data: any): any {
     return this.http.post(`${this.API_URL}/proveedor_pendiente/`, data);
   }
+  getServicios(): any {
+    return this.http.get(`${this.API_URL}/servicios`);
+  }
 }

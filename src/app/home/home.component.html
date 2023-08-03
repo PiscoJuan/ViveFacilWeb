@@ -11,7 +11,8 @@
             <a data-toggle="modal" data-target="#servicioNecesitasModal" class="masInfo0 btn  btn-lg"><b>CHATEA CON<br> NOSOTROS</b></a>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="assets/imagenes/a.jpg" alt="Second slide">
+            <img class="d-block w-100" src="assets/imagenes/sddsgtyyyyyyiiii.jpg" alt="Second slide">
+            <a data-toggle="modal" data-target="#servicioNecesitasModal" class="masInfo0 btn  btn-lg"><b>CHATEA CON<br> NOSOTROS</b></a>
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="assets/imagenes/a.jpg" alt="Third slide">
@@ -39,11 +40,11 @@
       <div class="d-flex flex-row justify-content-around">
         <h1 class="milton">servicios</h1>
       </div>
-      <div class="column">
-        <div class="icon" *ngFor="let serv of servicios">
+      <div class="column" style="padding-left: 4vw;padding-right: 4vw;">
+        <div class="icon" *ngFor="let serv of servicios" style="padding: 1vw;">
           <!-- <ion-label>{{serv.nombre}}</ion-label> -->
           <img
-            src="https://tomesoft1.pythonanywhere.com{{serv.foto}}"
+            src="https://tomesoft1.pythonanywhere.com{{serv.foto}}" width="200px"
           />
         </div>
       </div>
@@ -153,13 +154,17 @@
               <div class="col-4 colBlog" style="padding-right: 0;padding-top: 0;">
                 <img src="assets/imagenes/descargaya.JPG" class="imgBlog">
               </div>
-              <div class="col-8 colBlog" style="color: grey; padding-top: 0;">
-                <p >Te recordamos que los profesionales solamente pueden registrarse desde la aplicación. ¡Descárgatela gratis ahora y empieza a conseguir trabajos!</p>
+              <div class="col-8 colBlog" style="color: grey; padding-top: 0; text-align: center;">
+                <p >¡Vive Fácil es Gratis!<br>
+                  Para utilizarlo sólo<br>
+                  debes registrarte.</p>
                 <h1 style="text-align: center;width: 100%;"><b>¡Escanéame!</b></h1>
                 <div class="d-inline-flex p-2 justify-content-center" style="width: 100%;">
                   <a href=""><img src="assets/imagenes/qr.png" width="200px" height="200px" ></a>
                 </div>
-                
+                <p>¡Consigue varios<br>
+                  Presupuestos!<br>
+                  De forma muy rápida.</p>
               </div>
             </div>
           </div>
@@ -167,56 +172,6 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
           </div> -->
-        </div>
-      </div>
-    </div>
-  
-    <!-- MODAL Chatea -->
-    <div class="modal fade" id="servicioNecesitasModal" tabindex="-1" role="dialog" aria-labelledby="servicioNecesitasModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header justify-content-start border-0">
-            <img src="assets/imagenes/000011111Amarillo.png" class="" width="60px" >
-            <h2 class="modal-title" id="servicioNecesitasModalLabel" style="color: #305E90;"><b>¿Qué servicio necesitas?</b></h2>
-          </div>
-          <div class="modal-body" style="color: #305E90; padding-top: 0; padding-left: 2vw; padding-right: 2vw;">
-            <p style="color: grey; padding-top: 0;">¡Chatea con 3 profesionales al momento y consigue tu presupuesto ideal!<br>
-              No compartimos tu dirección con nadie.</p>
-            <form>
-              <div class="row" >
-                <div class="col-6 colBlog" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-left: 1vw; ">
-                  <h5>CATEGORÍA</h5>
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Aire acondicionado</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-                <div class="col-6 colBlog" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-right: 1vw; ">
-                  <h5>SUBCATEGORÍA</h5>
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Instalación</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <h5>TÍTULO</h5>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej. Filtraciones en la cocina">
-                <h5>Descripción de servicio</h5>
-                <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Ej. Tengo una filtración en la cocina necesito reparar..">
-                <h5>Ubicación</h5>
-                <input type="email" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" placeholder="Ej. Tengo una filtración en la cocina necesito reparar..">
-              </div>
-              <div class="modal-footer border-0">
-                <button type="button" class="btn btn-primary">Pedir presupuesto</button>
-              </div>
-            </form>
-          </div>
-          
         </div>
       </div>
     </div>

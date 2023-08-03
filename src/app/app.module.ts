@@ -9,13 +9,19 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { HomeComponent } from './home/home.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { ComoFuncionaComponent } from './como-funciona/como-funciona.component';
+import { EresProfesionalComponent } from './eres-profesional/eres-profesional.component';
+import { ServiciosComponent } from './servicios/servicios.component';
+import { ContactoComponent } from './contacto/contacto.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NosotrosComponent,
     FormularioComponent,
-    ComoFuncionaComponent
+    ComoFuncionaComponent,
+    EresProfesionalComponent,
+    ServiciosComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

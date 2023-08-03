@@ -1,0 +1,48 @@
+#garantia{
+    background-color: #887BC6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    display: block;
+}
+.masInfo {
+    left: 5%;
+    top: 30%;
+    position: absolute;
+    max-width: 35vw;
+}
+.masInfo2 {
+    padding-left: 75px;
+    padding-right: 75px;
+    background-color: #FFE92F;
+}
+.selecciones{
+    margin-bottom: 2vh;
+}
+.imgPerfil{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+.rowClient{
+    background-color: #F5F5F8;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+.colBlog{
+    padding: 2vw;
+    p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+    }
+}
+.preMilton{
+    margin-bottom: 0;
+}
+.milton{
+    font-family: "Milton Keynes";
+    font-size:10vh;
+    src: url('/assets/Milton Keynes.ttf') format('truetype');
+}

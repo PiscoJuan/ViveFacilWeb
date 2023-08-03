@@ -1,0 +1,18 @@
+.masInfo {
+    padding-left: 75px;
+    padding-right: 75px;
+    background-color: #FFE92F;
+}
+.preMilton{
+    margin-bottom: 0;
+}
+.milton{
+    font-family: "Milton Keynes";
+    font-size: 10vh;
+    src: url('/assets/Milton Keynes.ttf') format('truetype');
+}
+.column{
+    display: flex;
+    flex-flow: wrap;
+    justify-content:space-evenly;
+  }

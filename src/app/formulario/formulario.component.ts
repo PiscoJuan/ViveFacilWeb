@@ -89,25 +89,27 @@ export class FormularioComponent {
       genero: this.formEdit.value.genero,
       telefono: this.formEdit.value.telefono,
       cedula: this.formEdit.value.cedula,
-      copiaCedula: this.formEdit.value.copiaCedula,
+      copiaCedula: this.filePDF,
       ciudad: this.formEdit.value.ciudad,
       direccion: this.formEdit.value.direccion,
       email: this.formEdit.value.correo,
       descripcion: this.formEdit.value.descripcion,
       licencia: this.formEdit.value.licencia,
-      copiaLicencia: this.formEdit.value.copiaLicencia,
+      copiaLicencia: this.filePDF2,
       profesion: this.formEdit.value.profesion,
       ano_experiencia: this.formEdit.value.ano_experiencia,
       banco: this.formEdit.value.banco,
       numero_cuenta: this.formEdit.value.numero_cuenta,
       tipo_cuenta: this.formEdit.value.tipo_cuenta,
-      foto: this.formEdit.value.foto,
-      planilla_servicios: this.formEdit.value.filesDocuments
+      foto: this.fileImgPerfil,
+      //planilla_servicios: this.formEdit.value.planilla_servicios
+      filesDocuments: [this.filePDF3]
     }
-    
+    console.log("pendiente")
     console.log(pendiente)
 
     this.formService.crear_proveedor_pendiente(pendiente).subscribe((resp: any) => {
+      console.log("resp")
       console.log(resp)
     })
 
@@ -323,5 +325,5 @@ export class FormularioComponent {
 
   refresh(): void {
     window.location.reload();
-}
+  }
 }

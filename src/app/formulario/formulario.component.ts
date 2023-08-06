@@ -72,7 +72,8 @@ export class FormularioComponent {
     // foto: new FormControl('', [Validators.required]),
   });
   constructor(private sanitizer: DomSanitizer, private formService: FormularioService,) {
-    this.formService.obtener_profesiones().subscribe((resp: any) => {
+    this.formService.getServicios().subscribe((resp: any) => {
+      console.log("resp")
       console.log(resp)
         this.profesiones= resp
     }); 

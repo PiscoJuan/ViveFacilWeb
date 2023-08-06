@@ -320,4 +320,8 @@ export class FormularioComponent {
       .catch(err => console.log(err));
     }
   };
+
+  refresh(): void {
+    window.location.reload();
+}
 }

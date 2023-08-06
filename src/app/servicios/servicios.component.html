@@ -25,23 +25,24 @@
                                 <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. micorreo@gmail.com">
                             </div>
                         </div>
-                        <div class="col-6 colBlog" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-right: 1vw; ">
+                        <div class="col-6 colBlog text-truncate" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-right: 1vw; ">
                             <div class="selecciones">
-                                <h5>CATEGORÍA</h5>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Aire acondicionado</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="selecciones">
-                                <h5>SUBCATEGORÍA</h5>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Instalación</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                <h5>SERVICIO</h5>
+                                <select
+                                class="form-select"
+                                formControlName="profesion"
+                                id="ge"
+                                aria-describedby="selectorServicioCrearFeedback" style="width: 100%;">
+                                  <option selected disabled value="">
+                                    Elija un servicio...
+                                  </option>
+                                  <option
+                                    *ngFor="let c of profesiones"
+                                    [id]="c"
+                                    [value]="c"
+                                  >
+                                    {{ c.nombre }}
+                                  </option>
                                 </select>
                             </div>
                             <div class="selecciones">

@@ -20,4 +20,7 @@ export class ServiciosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  refresh(): void {
+    window.location.reload();
+  }
 }

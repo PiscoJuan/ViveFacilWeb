@@ -16,3 +16,33 @@
     flex-flow: wrap;
     justify-content:space-evenly;
   }
+.erer{
+    p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+    }
+}
+.tarjeta{
+    background-color: white;
+    border-radius: 15px; 
+    margin:1vw;
+    padding: 1vw;
+    color: #666666;
+}
+.imagentod{
+    padding-top: 2vh;
+}
+.invis {
+    left: 7%;
+    top: 87%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    padding-left: 11.5vw;
+    padding-right: 11.5vw;
+    padding-top: 6vh;
+    background-color: #FFE92F;
+    opacity: 0.5;
+}

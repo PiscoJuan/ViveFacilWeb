@@ -133,3 +133,15 @@
     font-size: 10vh;
     src: url('/assets/fonts/MiltonKeynes.ttf') format('truetype');
 }
+.invis {
+    left: 15%;
+    top: 82%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    padding-left: 11.5vw;
+    padding-right: 11.5vw;
+    padding-top: 6vh;
+    background-color: #FFE92F;
+    opacity: 0;
+}

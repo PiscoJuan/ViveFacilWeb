@@ -2,20 +2,27 @@
 #body{
     padding-top: 10px;
     z-index: 50;
+    top:0;
     position: relative;
     display: block;
 }
-#body2{
+.body2{
     padding-top: 10px;
-    top: 0;
+    bottom: 0%;
     z-index: 10;
-    position: absolute;
+    position: sticky;
     ;
 }
 #body3{
     padding-top: 10px;
     top: 15%;
-    z-index: 40;
+    z-index: -2;
+    position: fixed;
+}
+#body4{
+    padding-top: 10px;
+    top: 15%;
+    z-index: 0;
     position: fixed;
 }
 #bodyMenos7{
@@ -60,12 +67,7 @@
 #tipoUsuario{
     position: relative;
     display: block;
-    z-index: 10;
-}
-#seguridad{
-    position: relative;
-    display: block;
-    z-index: 10;
+    
 }
 .plus-image {
     left: 35%;
@@ -89,20 +91,42 @@
     padding-left: 2%;
     padding-right: 2%;
 }
-.masInfo {
-    left: 17%;
-    top: 80%;
+.masInfo1 {
+    left: 0%;
+    top: 0%;
+    padding-left: 2vw;
+    padding-right: 2vw;
     position: absolute;
-    margin-top: -25px;
-    margin-left: -25px;
-    padding-left: 75px;
-    padding-right: 75px;
-    background-color: #FFE92F;
+    width: 100%;
+}
+.masInfo2 {
+    left: 0%;
+    top: 25%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    position: absolute;
+    width: 100%;
+}
+.masInfo3 {
+    left: 0%;
+    top: 50%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    position: absolute;
+    width: 100%;
+}
+.masInfo4 {
+    left: 0%;
+    top: 75%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    position: absolute;
+    width: 100%;
 }
 #comoFunciona{
     background-color: white;
 }
-.masInfo2 {
+.masInformacion {
     padding-left: 75px;
     padding-right: 75px;
     background-color: #FFE92F;
@@ -130,16 +154,7 @@
     position: relative;
     display: block;
 }
-.masInfo3 {
-        left: 87%;
-        top: 65%;
-        position: absolute;
-        margin-top: -25px;
-        margin-left: -25px;
-        padding-left: 75px;
-        padding-right: 75px;
-        background-color: #FFE92F;
-    }
+
 .qrcode{
     left: 51%;
     top: 40%;
@@ -173,8 +188,14 @@
     background-color: yellow;
     font-size: 20px;
 }
-.navbarBott{
-    z-index: 10;
-    position: relative;
-    bottom: 0;
+.masInfo {
+    left: 18%;
+    top: 80%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #F2902A;
+    font-size: medium;
 }

@@ -12,6 +12,7 @@ import { ComoFuncionaComponent } from './como-funciona/como-funciona.component';
 import { EresProfesionalComponent } from './eres-profesional/eres-profesional.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { FuncionComponent } from './funcion/funcion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     ComoFuncionaComponent,
     EresProfesionalComponent,
     ServiciosComponent,
-    ContactoComponent
+    ContactoComponent,
+    FuncionComponent
   ],
   imports: [
     BrowserModule,

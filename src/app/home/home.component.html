@@ -1,8 +1,20 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="bar container-fluid">
+    <img src="assets/imagenes/logo-inicio.png" class="logo img-fluid rounded float-left" >
+    <a class="navbar-brand" href="home/">HOME</a>
+    <a class="navbar-brand" href="nosotros/">NOSOTROS</a>
+    <a class="navbar-brand" href="comofunciona/">CÓMO FUNCIONA</a>
+    <a class="navbar-brand" href="eresprofesional/">¿ERES PROFESIONAL?</a>
+    <a class="navbar-brand" href="servicio/">SERVICIOS</a>
+    <a class="navbar-brand" href="contacto/">CONTACTO</a>
+  </div>
+</nav>
 <div id="body">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active" style="position: relative; display: block;">
@@ -12,6 +24,70 @@
           <div class="carousel-item">
             <img class="d-block w-100" src="assets/imagenes/sddsgtyyyyyyiiii.jpg" alt="Second slide">
             <a href="https://play.google.com/store/apps/details?id=com.tome.app" class="invis btn  btn-lg"></a>
+          </div>
+          <div  class="carousel-item">
+            <img src="assets/imagenes/sfsdsdf.jpg" style="width: 100%;">
+            <div class="masInfo5" id="servicioNecesitasModal" style="max-height: 80vh;">
+                <div class="modal-content" style="max-height: 80vh;">
+                    <div class="modal-header justify-content-start border-0">
+                        <img src="assets/imagenes/000011111Amarillo.png" class="" width="60px" >
+                        <h2 class="modal-title" id="servicioNecesitasModalLabel" style="color: #305E90; font-size: 4vh;"><b>¿Qué servicio necesitas?</b></h2>
+                    </div>
+                    <div class="modal-body" style="color: #305E90; padding-top: 0; padding-left: 2vw; padding-right: 2vw;  font-size: 2.5vh; height: 100%;">
+                        <p style="color: grey; padding-top: 0;">¡Realiza tu Solicitud y Vive Fácil Te facilita de forma rapida a todos los profesionales!</p>
+                        <form>
+                        <div class="row" style="max-height: 80vh;">
+                            <div class="col-6 colBlog" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-left: 1vw; ">
+                                <div class="selecciones" style="max-width: 205vw;">
+                                    <img src="assets/imagenes/15descuento.JPG" width="100%" >
+                                </div>
+                                <div class="selecciones">
+                                    <h5 style="font-size: 2.5vh;">NOMBRES</h5>
+                                    <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. Anita Perez">
+                                </div>
+                                <div class="selecciones">
+                                    <h5 style="font-size: 2.5vh;">Correo</h5>
+                                    <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. micorreo@gmail.com">
+                                </div>
+                            </div>
+                            <div class="col-6 colBlog text-truncate" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-right: 1vw; ">
+                                <div class="selecciones">
+                                    <h5 style="font-size: 2.5vh;">SERVICIO</h5>
+                                    <select
+                                    class="form-select"
+                                    formControlName="profesion"
+                                    id="ge"
+                                    aria-describedby="selectorServicioCrearFeedback" style="width: 100%;">
+                                      <option selected disabled value="">
+                                        Elija un servicio...
+                                      </option>
+                                      <option
+                                        *ngFor="let c of servicios"
+                                        [id]="c"
+                                        [value]="c"
+                                      >
+                                        {{ c.nombre }}
+                                      </option>
+                                    </select>
+                                </div>
+                                <div class="selecciones">
+                                    <h5 style="font-size: 2.5vh;">TÍTULO</h5>
+                                    <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. Filtraciones en la cocina">
+                                </div>
+                                <div class="selecciones">
+                                    <h5 style="font-size: 2.5vh;">TELÉFONO</h5>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej. 098 765 4321">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="d-inline-flex p-2 justify-content-center" style="width: 100%;">
+                            <button type="button" class="btn masInfo2" data-bs-toggle="modal" data-bs-target="#modalConfirmacion3"><p style="padding: 0; margin: 0; font-size: 2.5vh;"><b>Obtener <br> Descuento</b></p></button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -23,32 +99,36 @@
           <span class="sr-only">Next</span>
         </a>
     </div>
+
     <div id="tipoUsuario" >
         <img src="assets/imagenes/dfgyyyyy.jpg" style="width: 100%;">
-        <a href="#servicio"><img src="assets/imagenes/00002.png" width="250px" height="220px" class='plus-image'></a>
-        <a href="#eresprofesional"><img src="assets/imagenes/0000111112.png" width="250px" height="220px" class='plus-image2'></a>
+        <a href="servicio/"><img src="assets/imagenes/00002.png" width="250px" height="220px" class='plus-image'></a>
+        <a href="eresprofesional/"><img src="assets/imagenes/0000111112.png" width="250px" height="220px" class='plus-image2'></a>
     </div>
-    <div id="servicios" >
+    
+    <div id="servicios" class="contenedor">
       <div class="d-flex flex-row justify-content-around">
         <h2 class="preMilton">Conoce nuestros</h2>
       </div>
       <div class="d-flex flex-row justify-content-around">
         <h1 class="milton">servicios</h1>
       </div>
-      <div class="column" style="padding-left: 4vw;padding-right: 4vw;">
-        <div class="icon" *ngFor="let serv of servicios" style="padding: 1vw;">
+      <div class="column" >
+        <div class="icon" *ngFor="let serv of servicios" style="padding: 0.5vw;">
           <!-- <ion-label>{{serv.nombre}}</ion-label> -->
           <img
-            src="https://tomesoft1.pythonanywhere.com{{serv.foto}}" width="130px"
+            src="https://tomesoft1.pythonanywhere.com{{serv.foto}}" width="120px"
           />
         </div>
       </div>
     </div>
+
     <div id="garantia" >
       <img src="assets/imagenes/uiytt.jpg" style="width: 100%;">
-      <a href="#comofunciona" class="masInfo btn  btn-lg"><b>MÁS <br> INFORMACIÓN</b></a>
+      <a href="/comofunciona/#garantia" class="masInfo btn  btn-lg"><b>MÁS <br> INFORMACIÓN</b></a>
     </div>
-    <div id="blog" >
+
+    <div id="blog" class="contenedor">
       <div class="d-flex flex-row justify-content-around" style="padding-top: 1vh; color:#433689;">
         <h2 class="preMilton">Conoce nuestro</h2>
       </div>
@@ -79,16 +159,17 @@
     </div>
     <div id="descarga">
       <img src="assets/imagenes/bannerssss.jpg" style="width: 100%;">
-      <a href="#contacto" class="masInfo3 btn btn-lg"><b>Contacto</b></a>
+      <a href="contacto/" class="masInfo3 btn btn-lg"><b>Contacto</b></a>
       <img src="assets/imagenes/qr.png" width="200px" height="200px" class='qrcode'>
       <a href="https://play.google.com/store/apps/details?id=com.tome.app" class="invis2 btn  btn-lg"></a>
     </div>
-    <div id="clientes">
+
+    <div id="clientes" class="contenedor">
       <div class="d-flex flex-row justify-content-around" style="padding-top: 1vh; color:#433689;">
-        <h2>Lo que cuentan los clientes de</h2>
+        <h2 class="preMilton">Lo que cuentan los clientes de</h2>
       </div>
       <div class="d-flex flex-row justify-content-around" style="padding-bottom: 2vh;color:#433689;">
-        <img src="assets/imagenes/logo-inicio - copia.png" class="" width="200px" >
+        <img src="assets/imagenes/logo-inicio - copia.png" class="" width="250px" >
       </div>
       <div class="row rowClient">
         <div class="col-4 colBlog" style="color: gray;">
@@ -173,3 +254,22 @@
       </div>
     </div>
   </div>  
+
+  <div class="modal" tabindex="-1" role="dialog" id="modalConfirmacion3">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title">Solicitud enviada</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <p>Su solicitud fue enviada correctamente.</p>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)=" refresh()">Confirmar</button>
+        </div>
+    </div>
+    </div>
+</div>

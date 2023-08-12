@@ -54,14 +54,15 @@ img{
     display: block;
 }
 .masInfo {
-    left: 17%;
+    left: 18%;
     top: 80%;
     position: absolute;
     margin-top: -25px;
     margin-left: -25px;
-    padding-left: 75px;
-    padding-right: 75px;
-    background-color: #FFE92F;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #F2902A;
+    font-size: medium;
 }
 #blog{
     background-color: white;
@@ -74,10 +75,6 @@ img{
 .imgBlog{
     width: 100%;
     border-radius: 10%;
-}
-.rowBlog{
-    margin-left: 5vw;
-    margin-right: 5vw;
 }
 .colBlog{
     padding: 2vw;
@@ -121,8 +118,6 @@ img{
 
 .rowClient{
     background-color: #F5F5F8;
-    margin-left: 5vw;
-    margin-right: 5vw;
 }
 .modal-xl {
     --bs-modal-width: 1140px;
@@ -170,4 +165,10 @@ img{
     padding-top: 7vh;
     background-color: #FFE92F;
     opacity: 0;
+}
+.masInfo5 {
+    left: 5%;
+    top: 25%;
+    position: absolute;
+    max-width: 35vw;
 }

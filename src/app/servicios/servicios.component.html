@@ -1,3 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="bar container-fluid">
+      <img src="assets/imagenes/logo-inicio.png" class="logo img-fluid rounded float-left" >
+      <a class="navbar-brand" href="home/">HOME</a>
+      <a class="navbar-brand" href="nosotros/">NOSOTROS</a>
+      <a class="navbar-brand" href="comofunciona/">CÓMO FUNCIONA</a>
+      <a class="navbar-brand" href="eresprofesional/">¿ERES PROFESIONAL?</a>
+      <a class="navbar-brand" href="servicio/">SERVICIOS</a>
+      <a class="navbar-brand" href="#contacto">CONTACTO</a>
+    </div>
+  </nav>
 <div id="body" >
     <div id="garantia" >
         <img src="assets/imagenes/sfsdsdf.jpg" style="width: 100%;">
@@ -8,8 +19,7 @@
                     <h2 class="modal-title" id="servicioNecesitasModalLabel" style="color: #305E90; font-size: 4vh;"><b>¿Qué servicio necesitas?</b></h2>
                 </div>
                 <div class="modal-body" style="color: #305E90; padding-top: 0; padding-left: 2vw; padding-right: 2vw;  font-size: 2.5vh; height: 100%;">
-                    <p style="color: grey; padding-top: 0;">¡Realiza tu Solicitud y Vive Fácil Te facilita de forma rapida
-    a todos los profesionales!</p>
+                    <p style="color: grey; padding-top: 0;">¡Realiza tu Solicitud y Vive Fácil Te facilita de forma rapida a todos los profesionales!</p>
                     <form>
                     <div class="row" style="max-height: 80vh;">
                         <div class="col-6 colBlog" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-left: 1vw; ">
@@ -109,6 +119,18 @@
             </div>
         </div>
     </div>
+
+    <div id="servicios" class="contenedor">
+        <div class="column" >
+            <div class="icon" *ngFor="let serv of profesiones" style="padding: 0.5vw;">
+                <!-- <ion-label>{{serv.nombre}}</ion-label> -->
+                <img
+                src="https://tomesoft1.pythonanywhere.com{{serv.foto}}" width="120px"
+                />
+            </div>
+        </div>
+    </div>
+    
     <div id="100porcien" >
         <img src="assets/imagenes/100pporcien.JPG" style="width: 100%;">
     </div>

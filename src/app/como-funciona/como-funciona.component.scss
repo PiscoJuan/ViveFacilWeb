@@ -1,8 +1,48 @@
 
 #body{
-    background-color: #887BC6;
     padding-top: 10px;
+    z-index: 50;
+    position: relative;
+    display: block;
 }
+#body2{
+    padding-top: 10px;
+    top: 0;
+    z-index: 10;
+    position: absolute;
+    ;
+}
+#body3{
+    padding-top: 10px;
+    top: 15%;
+    z-index: 40;
+    position: fixed;
+}
+#bodyMenos7{
+    padding-top: 10px;
+    top: 15%;
+    z-index: -7;
+    position: sticky;
+}
+#bodyMenos8{
+    padding-top: 10px;
+    top: 15%;
+    z-index: -8;
+    position: sticky;
+}
+#bodyMenos9{
+    padding-top: 10px;
+    top: 15%;
+    z-index: -9;
+    position: sticky;
+}
+#bodyMenos10{
+    padding-top: 10px;
+    top: 15%;
+    z-index: -10;
+    position: sticky;
+}
+
 // .carousel-control-prev-icon{
 //     background-color: #887BC6;
 //     padding: 10px;
@@ -44,13 +84,6 @@
     padding-left: 2%;
     padding-right: 2%;
 }
-#garantia{
-    background-color: #887BC6;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    position: relative;
-    display: block;
-}
 .masInfo {
     left: 17%;
     top: 80%;
@@ -61,7 +94,7 @@
     padding-right: 75px;
     background-color: #FFE92F;
 }
-#blog{
+#comoFunciona{
     background-color: white;
 }
 .masInfo2 {
@@ -111,11 +144,6 @@
 #clientes{
     background-color: white;
 }
-.imgPerfil{
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-}
 
 .rowClient{
     background-color: #F5F5F8;
@@ -132,4 +160,11 @@
     font-family: "Milton Keynes";
     font-size:10vh;
     src: url('/assets/fonts/MiltonKeynes.ttf') format('truetype');
+}
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+    font-size: 20px;
 }

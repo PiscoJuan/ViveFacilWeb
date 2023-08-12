@@ -3,3 +3,55 @@
     src: url('/assets/fonts/MiltonKeynes.ttf') format('truetype');
 }
 @import url('https://fonts.cdnfonts.com/css/milton-keynes');
+
+.horarios{
+    background-color: #433689;
+    color: white;
+    p{
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: large;
+        padding-left: 5vw;
+    }
+}
+.navbar{
+    padding: 0;
+}
+.bar{
+    background-color: #171B21;
+    color: white;
+    a{
+        color: white;
+        font-size: large;
+    }
+    a:hover{
+        color: yellow;
+    }
+}
+
+.purpleLine{
+    background-color: #887BC6;
+}
+
+.logo{
+    width: 8vw;
+    margin-right: 10vw;
+    margin-left: 5vw;
+}
+svg{
+    margin-right: 2vw;
+}
+.navbarTopp {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 1;
+  }
+
+.contenedor{
+    padding-left: 12vw;
+    padding-right: 12vw;
+    padding-bottom: 5vh;
+}

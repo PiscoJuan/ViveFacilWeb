@@ -60,6 +60,12 @@ export class FuncionComponent implements OnInit {
         if (el != null) {
           el.style.visibility = 'visible';
         }
+        
+      }
+      if(currentSectionId == "part5"){
+        if (el != null) {
+          el.style.visibility = 'hidden';
+        }
       }
     });
   }

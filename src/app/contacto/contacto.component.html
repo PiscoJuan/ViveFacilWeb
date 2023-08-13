@@ -14,6 +14,9 @@
       <h1 class="milton">Contacto!</h1>
     </div>
     <div id="sello d-flex" style="background-color: #EFEFF4;">
+      <div id="contenedor-mapa">
+
+      </div>
         <div class="d-flex flex-row justify-content-around">
             <img src="assets/imagenes/mapa.JPG"  style="margin: 2vw;">
         </div>
@@ -55,15 +58,15 @@
                       [value]="pendiente_seleccionada?.correo" -->
                   </div>
             </div>
-            <div class="col-12">
-                <input
-                  type="text"
+            <div class="col-12" style="padding-left: 0;padding-right: 0;padding-top: 1vw;padding-bottom: 1vw;">
+                <textarea
+                  type="textarea"
                   formControlName="mensaje"
                   class="form-control"
                   placeholder="Mensaje"
-                /><!-- [ngClass]="isInvalidForm('email') ? 'is-invalid' : ''"
-                  [placeholder]="pendiente_seleccionada?.correo"
-                  [value]="pendiente_seleccionada?.correo" -->
+                  rows="3"
+                  cols="25"
+                ></textarea>
               </div>
               <div class="d-inline-flex p-2 justify-content-center" style="width: 100%;">
                 <button type="button" class="btn masInfo2"><p style="padding: 0; margin: 0; font-size: 2.5vh;"><b>ENVIAR</b></p></button>

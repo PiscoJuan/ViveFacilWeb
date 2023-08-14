@@ -6,6 +6,12 @@
     position: relative;
     display: block;
 }
+#part0{
+    z-index: 50;
+    top:0;
+    position: relative;
+    display: block;
+}
 .body2{
     padding-top: 10px;
     bottom: 0%;
@@ -17,6 +23,12 @@
     padding-top: 10px;
     top: 15%;
     z-index: -2;
+    position: fixed;
+}
+#body35{
+    padding-top: 10px;
+    top: 15%;
+    z-index: -20;
     position: fixed;
 }
 #body4{

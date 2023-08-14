@@ -1,0 +1,15 @@
+.map-container {
+    z-index: -5;
+    margin: 30px;
+}
+
+.map-frame {
+    border: 2px solid black;
+    height: 50vh;
+    z-index: -4;
+}
+
+#map {
+    height: 100%;
+    z-index: 0;
+}

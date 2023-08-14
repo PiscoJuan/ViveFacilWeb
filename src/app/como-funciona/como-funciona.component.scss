@@ -61,6 +61,8 @@
     position: relative;
     display: block;
     z-index: 10;
+    // padding-bottom: 20vh;
+    // background-color: white;
 }
 #seguridad{
     position: relative;
@@ -177,4 +179,16 @@
     z-index: 10;
     position: relative;
     bottom: 0;
+}
+
+.masInfo {
+    left: 18%;
+    top: 0%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #F2902A;
+    font-size: medium;
 }

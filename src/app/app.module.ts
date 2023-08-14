@@ -13,6 +13,8 @@ import { EresProfesionalComponent } from './eres-profesional/eres-profesional.co
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FuncionComponent } from './funcion/funcion.component';
+import { MapComponent } from './map/map.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { FuncionComponent } from './funcion/funcion.component';
     EresProfesionalComponent,
     ServiciosComponent,
     ContactoComponent,
-    FuncionComponent
+    FuncionComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

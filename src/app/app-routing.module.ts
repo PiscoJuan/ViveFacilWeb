@@ -7,6 +7,7 @@ import { ComoFuncionaComponent } from './como-funciona/como-funciona.component';
 import { EresProfesionalComponent } from './eres-profesional/eres-profesional.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ServiciosComponent } from './servicios/servicios.component';
+import { TerminoComponent } from './termino/termino.component';
 
 const routes: Routes = [
   {path: 'home' , component: HomeComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'eresprofesional' , component: EresProfesionalComponent},
   {path: 'contacto' , component: ContactoComponent},
   {path: 'servicio' , component: ServiciosComponent},
+  {path: 'termino' , component: TerminoComponent},
   // {path: 'contact/:id' , component: ContactDetailComponent}
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
 ];

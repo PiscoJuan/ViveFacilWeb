@@ -1,0 +1,199 @@
+img{
+    max-height: 900px;
+}
+#body{
+    background-color: #887BC6;
+    padding-top: 10px;
+}
+// .carousel-control-prev-icon{
+//     background-color: #887BC6;
+//     padding: 10px;
+// }
+.masInfo0 {
+    left: 77%;
+    top: 80%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    padding-left: 75px;
+    padding-right: 75px;
+    background-color: #FFE92F;
+}
+#tipoUsuario{
+    position: relative;
+    display: block;
+    
+}
+.plus-image {
+    left: 35%;
+    top: 40%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+.plus-image15 {
+    left: 35%;
+    top: 40%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    z-index: 30;
+    opacity: 0;
+    
+}
+.plus-image15:hover{
+    opacity: 100%;
+}
+.plus-image2 {
+    left: 55%;
+    top: 40%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+.plus-image25 {
+    left: 55%;
+    top: 40%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    z-index: 30;
+    opacity: 0;
+}
+.plus-image25:hover {
+    opacity: 100%;
+}
+#servicios{
+    background-color: white;
+    color:#433689;
+}
+.serviciosClass{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+#garantia{
+    background-color: #887BC6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    display: block;
+}
+.masInfo {
+    left: 18%;
+    top: 80%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #F2902A;
+    font-size: medium;
+}
+#blog{
+    background-color: white;
+}
+.masInfo2 {
+    padding-left: 75px;
+    padding-right: 75px;
+    background-color: #FFE92F;
+}
+.imgBlog{
+    width: 100%;
+    border-radius: 10%;
+}
+.colBlog{
+    padding: 2vw;
+    p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+    }
+}
+#descarga{
+    background-color: #887BC6;
+    padding-top: 10px;
+    position: relative;
+    display: block;
+}
+.masInfo3 {
+        left: 87%;
+        top: 65%;
+        position: absolute;
+        margin-top: -25px;
+        margin-left: -25px;
+        padding-left: 75px;
+        padding-right: 75px;
+        background-color: #FFE92F;
+    }
+.qrcode{
+    left: 51%;
+    top: 40%;
+    position: absolute;
+
+}
+#clientes{
+    background-color: white;
+}
+.imgPerfil{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.rowClient{
+    background-color: #F5F5F8;
+}
+.modal-xl {
+    --bs-modal-width: 1140px;
+  }
+.preMilton{
+    margin-bottom: 0;
+    font-size:5vh;
+}
+.milton{
+    font-family: "Milton Keynes";
+    font-size:12vh;
+    src: url('/assets/fonts/MiltonKeynes.ttf') format('truetype');
+}
+
+.icon {
+
+  }
+
+  .column{
+    display: flex;
+    flex-flow: wrap;
+    justify-content:space-evenly;
+  }
+
+.invis {
+    left: 7%;
+    top: 87%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    padding-left: 11.5vw;
+    padding-right: 11.5vw;
+    padding-top: 6vh;
+    background-color: #FFE92F;
+    opacity: 0;
+}
+.invis2 {
+    left: 45.5%;
+    top: 80%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    padding-left: 12vw;
+    padding-right: 13vw;
+    padding-top: 7vh;
+    background-color: #FFE92F;
+    opacity: 0;
+}
+.masInfo5 {
+    left: 5%;
+    top: 25%;
+    position: absolute;
+    max-width: 35vw;
+}

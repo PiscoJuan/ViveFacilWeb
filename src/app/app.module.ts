@@ -14,6 +14,7 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FuncionComponent } from './funcion/funcion.component';
 import { MapComponent } from './map/map.component';
+import { TerminoComponent } from './termino/termino.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MapComponent } from './map/map.component';
     ServiciosComponent,
     ContactoComponent,
     FuncionComponent,
-    MapComponent
+    MapComponent,
+    TerminoComponent
   ],
   imports: [
     BrowserModule,

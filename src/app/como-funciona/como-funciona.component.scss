@@ -76,12 +76,37 @@
     margin-top: -25px;
     margin-left: -25px;
 }
+.plus-image15 {
+    left: 35%;
+    top: 40%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    z-index: 30;
+    opacity: 0;
+    
+}
+.plus-image15:hover{
+    opacity: 100%;
+}
 .plus-image2 {
     left: 55%;
     top: 40%;
     position: absolute;
     margin-top: -25px;
     margin-left: -25px;
+}
+.plus-image25 {
+    left: 55%;
+    top: 40%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    z-index: 30;
+    opacity: 0;
+}
+.plus-image25:hover {
+    opacity: 100%;
 }
 #servicios{
     background-color: white;

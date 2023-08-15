@@ -11,7 +11,7 @@ export class MapComponent implements OnInit {
 
   private initMap(): void {
     this.map = L.map('map', {
-      center: [ 39.8282, -98.5795 ],
+      center: [ -2.17050, -79.90884 ],
       zoom: 18
     });
 
@@ -27,11 +27,11 @@ export class MapComponent implements OnInit {
     var greenIcon = L.icon({
       iconUrl: 'assets/imagenes/pinRed.png',
   
-      iconSize:     [50, 64], // size of the icon
+      iconSize:     [50, 50], // size of the icon
       iconAnchor:   [22, 62], // point of the icon which will correspond to marker's location
       popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
-    var marker = L.marker([39.8282, -98.5795 ], {icon: greenIcon}).addTo(this.map);
+    var marker = L.marker([ -2.17050, -79.90884 ], {icon: greenIcon}).addTo(this.map);
 
   }
 

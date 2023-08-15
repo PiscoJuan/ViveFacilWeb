@@ -138,9 +138,12 @@
 #comoFunciona{
     background-color: white;
 }
-.masInformacion {
+.masInformacion2 {
     padding-left: 75px;
     padding-right: 75px;
+    z-index: 150;
+    position: absolute;
+    display: block;
     background-color: #FFE92F;
 }
 .imgBlog{

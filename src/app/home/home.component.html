@@ -182,21 +182,41 @@
         </div>
       </div>
     </div>
-    <div id="tipoUsuario" >
+    <div id="tipoUsuario" class="d-none d-md-block">
         <img src="assets/imagenes/dfgyyyyy.jpg" style="width: 100%;">
         <a href="servicio/"><img src="assets/imagenes/00002.png" width="250px" height="220px" class='plus-image'></a>
         <a href="servicio/"><img src="assets/imagenes/000022.png" width="250px" height="220px" class='plus-image15'></a>
         <a href="eresprofesional/"><img src="assets/imagenes/0000111112.png" width="250px" height="220px" class='plus-image2'></a>
         <a href="eresprofesional/"><img src="assets/imagenes/00001111122.png" width="250px" height="220px" class='plus-image25'></a>
     </div>
+    <div id="tipoUsuario2" class="d-block d-sm-none d-none d-sm-block d-md-none" style="background-color: #433689; padding-top: 2vh; padding-bottom: 2vh;">
+      <div class="d-flex flex-row justify-content-around" style="margin: 4vw;">
+        <a href="servicio/"><img src="assets/imagenes/00002.png" width="200px" height="180px"></a>
+      </div>
+      <div class="d-flex flex-row justify-content-around" style="margin: 4vw;">
+        <a href="eresprofesional/"><img src="assets/imagenes/0000111112.png" width="200px" height="180px"></a>
+      </div>
+    </div>
     
     <div id="servicios" class="contenedor">
-      <div class="d-flex flex-row justify-content-around">
-        <h2 class="preMilton">Conoce nuestros</h2>
+      <div class=" flex-row justify-content-around d-none d-md-inline">
+        <div class="d-flex flex-row justify-content-around">
+          <h2 class="preMilton">Conoce nuestros</h2>
+        </div>
       </div>
-      <div class="d-flex flex-row justify-content-around">
-        <h1 class="milton">servicios</h1>
+      <div class="d-flex flex-row justify-content-around d-inline d-sm-none d-none d-sm-inline d-md-none">
+        <h2 class="preMilton" style="font-size: x-large;">Conoce nuestros</h2>
       </div>
+
+      <div class=" flex-row justify-content-around d-none d-md-inline">
+        <div class="d-flex flex-row justify-content-around">
+          <h1 class="milton">servicios</h1>
+        </div>
+      </div>
+      <div class="d-flex flex-row justify-content-around d-inline d-sm-none d-none d-sm-inline d-md-none">
+        <h1 class="milton" style="font-size: 10vh;">servicios</h1>
+      </div>
+
       <div class="column" >
         <div class="icon" *ngFor="let serv of servicios" style="padding: 0.5vw;">
           <!-- <ion-label>{{serv.nombre}}</ion-label> -->
@@ -213,13 +233,26 @@
     </div>
 
     <div id="blog" class="contenedor">
-      <div class="d-flex flex-row justify-content-around" style="padding-top: 1vh; color:#433689;">
-        <h2 class="preMilton">Conoce nuestro</h2>
+      <div class=" flex-row justify-content-around d-none d-md-inline" style="padding-top: 1vh; color:#433689;">
+        <div class="d-flex flex-row justify-content-around">
+          <h2 class="preMilton">Conoce nuestros</h2>
+        </div>
       </div>
-      <div class="d-flex flex-row justify-content-around" style="color:#433689;">
-        <h1 class="milton">Blog</h1>
+      <div class="d-flex flex-row justify-content-around d-inline d-sm-none d-none d-sm-inline d-md-none" style="padding-top: 1vh; color:#433689;">
+        <h2 class="preMilton" style="font-size: x-large;">Conoce nuestros</h2>
       </div>
-      <div class="row rowBlog">
+
+      <div class=" flex-row justify-content-around d-none d-md-inline" style="color:#433689;">
+        <div class="d-flex flex-row justify-content-around">
+          <h1 class="milton">Blog</h1>
+        </div>
+      </div>
+      <div class="d-flex flex-row justify-content-around d-inline d-sm-none d-none d-sm-inline d-md-none" style="color:#433689;">
+        <h1 class="milton" style="font-size: 10vh;">Blog</h1>
+      </div>
+
+      
+      <div class="d-none d-md-block"><div class="row rowBlog">
         <div class="col-4 colBlog">
           <img src="assets/imagenes/Instalación-y-características-de-un-cuadro-eléctrico-industrial.jpg" class="imgBlog">
           <h2><b>Cómo entender un cuadro eléctrico</b></h2>
@@ -239,6 +272,28 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor, arcu ac gravida bibendum, dui mi bibendum nisl, quis dignissim lectus mi in ipsum. Curabitur quis dignissim ligula, eget consectetur libero. Sed ac enim eros. Vivamus imperdiet ac orci vel condimentum. Etiam commodo aliquet purus placerat ornare. Curabitur eget porta est. Suspendisse quis risus quis sem bibendum vulputate. Mauris purus enim, posuere sit amet dolor et, volutpat scelerisque mauris. Suspendisse dapibus, lorem dapibus lacinia aliquet, dui enim mollis urna, ut bibendum tortor quam id elit. Fusce et ex ut enim commodo ullamcorper. Donec malesuada cursus convallis. Vivamus non imperdiet tortor. In hac habitasse platea dictumst. Quisque et diam mattis quam dignissim maximus.</p>
           <a  class="masInfo2 btn  btn-lg"><b>Leer más</b></a>
         </div>
+      </div></div>
+
+      <div class="row rowBlog d-inline d-sm-none d-none d-sm-inline d-md-none">
+        <div class=" colBlog">
+          <img src="assets/imagenes/Instalación-y-características-de-un-cuadro-eléctrico-industrial.jpg" class="imgBlog">
+          <h2><b>Cómo entender un cuadro eléctrico</b></h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor, arcu ac gravida bibendum, dui mi bibendum nisl, quis dignissim lectus mi in ipsum. Curabitur quis dignissim ligula, eget consectetur libero. Sed ac enim eros. Vivamus imperdiet ac orci vel condimentum. Etiam commodo aliquet purus placerat ornare. Curabitur eget porta est. Suspendisse quis risus quis sem bibendum vulputate. Mauris purus enim, posuere sit amet dolor et, volutpat scelerisque mauris. Suspendisse dapibus, lorem dapibus lacinia aliquet, dui enim mollis urna, ut bibendum tortor quam id elit. Fusce et ex ut enim commodo ullamcorper. Donec malesuada cursus convallis. Vivamus non imperdiet tortor. In hac habitasse platea dictumst. Quisque et diam mattis quam dignissim maximus.</p>
+          <a  class="masInfo2 btn  btn-lg"><b>Leer más</b></a>
+          
+        </div>
+        <div class=" colBlog">
+          <img src="assets/imagenes/Instalación-y-características-de-un-cuadro-eléctrico-industrial.jpg" class="imgBlog">
+          <h2><b>Cómo entender un cuadro eléctrico</b></h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor, arcu ac gravida bibendum, dui mi bibendum nisl, quis dignissim lectus mi in ipsum. Curabitur quis dignissim ligula, eget consectetur libero. Sed ac enim eros. Vivamus imperdiet ac orci vel condimentum. Etiam commodo aliquet purus placerat ornare. Curabitur eget porta est. Suspendisse quis risus quis sem bibendum vulputate. Mauris purus enim, posuere sit amet dolor et, volutpat scelerisque mauris. Suspendisse dapibus, lorem dapibus lacinia aliquet, dui enim mollis urna, ut bibendum tortor quam id elit. Fusce et ex ut enim commodo ullamcorper. Donec malesuada cursus convallis. Vivamus non imperdiet tortor. In hac habitasse platea dictumst. Quisque et diam mattis quam dignissim maximus.</p>
+          <a  class="masInfo2 btn  btn-lg"><b>Leer más</b></a>
+        </div>
+        <div class=" colBlog">
+          <img src="assets/imagenes/Instalación-y-características-de-un-cuadro-eléctrico-industrial.jpg" class="imgBlog">
+          <h2><b>Cómo entender un cuadro eléctrico</b></h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor, arcu ac gravida bibendum, dui mi bibendum nisl, quis dignissim lectus mi in ipsum. Curabitur quis dignissim ligula, eget consectetur libero. Sed ac enim eros. Vivamus imperdiet ac orci vel condimentum. Etiam commodo aliquet purus placerat ornare. Curabitur eget porta est. Suspendisse quis risus quis sem bibendum vulputate. Mauris purus enim, posuere sit amet dolor et, volutpat scelerisque mauris. Suspendisse dapibus, lorem dapibus lacinia aliquet, dui enim mollis urna, ut bibendum tortor quam id elit. Fusce et ex ut enim commodo ullamcorper. Donec malesuada cursus convallis. Vivamus non imperdiet tortor. In hac habitasse platea dictumst. Quisque et diam mattis quam dignissim maximus.</p>
+          <a  class="masInfo2 btn  btn-lg"><b>Leer más</b></a>
+        </div>
       </div>
     </div>
 
@@ -249,7 +304,7 @@
       <a href="https://play.google.com/store/apps/details?id=com.tome.app" class="invis2 btn  btn-lg"></a>
     </div>
 
-    <div id="clientes" class="contenedor">
+    <div id="clientes" class="contenedor d-none d-md-block">
       <div class="d-flex flex-row justify-content-around" style="padding-top: 1vh; color:#433689;">
         <h2 class="preMilton">Lo que cuentan los clientes de</h2>
       </div>
@@ -288,6 +343,61 @@
           </div>
         </div>
         <div class="col-4 colBlog" style="color: gray;">
+          <img src="assets/imagenes/Instalación-y-características-de-un-cuadro-eléctrico-industrial.jpg" class="imgPerfil">
+          <div class="row" style="margin-top: 5vh;">
+            <h2><b>Camilo Accosta</b></h2>
+          </div>
+          <div class="row">
+            <img src="assets/imagenes/estrellas.png" class="" width="100px" >
+          </div>
+          <div class="row">
+            <p><small>opinión en Google Play</small></p>
+          </div>
+          <div class="row" style="margin-top: 3vh;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor, arcu ac gravida bibendum, dui mi bibendum nisl, quis dignissim lectus mi in ipsum. Curabitur quis dignissim ligula, eget consectetur libero. Sed ac enim eros. Vivamus imperdiet ac orci vel condimentum. Etiam commodo aliquet purus placerat ornare. Curabitur eget porta est. Suspendisse quis risus quis sem bibendum vulputate. Mauris purus enim, posuere sit amet dolor et, volutpat scelerisque mauris. Suspendisse dapibus, lorem dapibus lacinia aliquet, dui enim mollis urna, ut bibendum tortor quam id elit. Fusce et ex ut enim commodo ullamcorper. Donec malesuada cursus convallis. Vivamus non imperdiet tortor. In hac habitasse platea dictumst. Quisque et diam mattis quam dignissim maximus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="clientes2" class="contenedor d-block d-sm-none d-none d-sm-block d-md-none" style="background-color: white;">
+      <div class="d-flex flex-row justify-content-around" style="padding-top: 1vh; color:#433689;">
+        <h2 class="preMilton">Lo que cuentan los clientes de</h2>
+      </div>
+      <div class="d-flex flex-row justify-content-around" style="padding-bottom: 2vh;color:#433689;">
+        <img src="assets/imagenes/logo-inicio - copia.png" class="" width="250px" >
+      </div>
+      <div class="row rowClient">
+        <div class="col-10 colBlog" style="color: gray; margin-left: 4vw;">
+          <img src="assets/imagenes/Instalación-y-características-de-un-cuadro-eléctrico-industrial.jpg" class="imgPerfil">
+          <div class="row" style="margin-top: 5vh;">
+            <h2><b>Camilo Accosta</b></h2>
+          </div>
+          <div class="row">
+            <img src="assets/imagenes/estrellas.png" class="" width="100px" >
+          </div>
+          <div class="row">
+            <p><small>opinión en Google Play</small></p>
+          </div>
+          <div class="row" style="margin-top: 3vh;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor, arcu ac gravida bibendum, dui mi bibendum nisl, quis dignissim lectus mi in ipsum. Curabitur quis dignissim ligula, eget consectetur libero. Sed ac enim eros. Vivamus imperdiet ac orci vel condimentum. Etiam commodo aliquet purus placerat ornare. Curabitur eget porta est. Suspendisse quis risus quis sem bibendum vulputate. Mauris purus enim, posuere sit amet dolor et, volutpat scelerisque mauris. Suspendisse dapibus, lorem dapibus lacinia aliquet, dui enim mollis urna, ut bibendum tortor quam id elit. Fusce et ex ut enim commodo ullamcorper. Donec malesuada cursus convallis. Vivamus non imperdiet tortor. In hac habitasse platea dictumst. Quisque et diam mattis quam dignissim maximus.</p>
+          </div>
+        </div>
+        <div class="col-10 colBlog" style="color: gray; margin-left: 4vw;">
+          <img src="assets/imagenes/Instalación-y-características-de-un-cuadro-eléctrico-industrial.jpg" class="imgPerfil">
+          <div class="row" style="margin-top: 5vh;">
+            <h2><b>Camilo Accosta</b></h2>
+          </div>
+          <div class="row">
+            <img src="assets/imagenes/estrellas.png" class="" width="100px" >
+          </div>
+          <div class="row">
+            <p><small>opinión en Google Play</small></p>
+          </div>
+          <div class="row" style="margin-top: 3vh;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor, arcu ac gravida bibendum, dui mi bibendum nisl, quis dignissim lectus mi in ipsum. Curabitur quis dignissim ligula, eget consectetur libero. Sed ac enim eros. Vivamus imperdiet ac orci vel condimentum. Etiam commodo aliquet purus placerat ornare. Curabitur eget porta est. Suspendisse quis risus quis sem bibendum vulputate. Mauris purus enim, posuere sit amet dolor et, volutpat scelerisque mauris. Suspendisse dapibus, lorem dapibus lacinia aliquet, dui enim mollis urna, ut bibendum tortor quam id elit. Fusce et ex ut enim commodo ullamcorper. Donec malesuada cursus convallis. Vivamus non imperdiet tortor. In hac habitasse platea dictumst. Quisque et diam mattis quam dignissim maximus.</p>
+          </div>
+        </div>
+        <div class="col-10 colBlog" style="color: gray; margin-left: 4vw;">
           <img src="assets/imagenes/Instalación-y-características-de-un-cuadro-eléctrico-industrial.jpg" class="imgPerfil">
           <div class="row" style="margin-top: 5vh;">
             <h2><b>Camilo Accosta</b></h2>

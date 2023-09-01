@@ -34,3 +34,9 @@
     height: 100%;
   }
   
+  @media only screen and (max-width: 991px) {
+    #map {
+      width:100px;
+height:300px;
+    }
+}

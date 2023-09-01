@@ -28,7 +28,8 @@
     </div>
   </div>
 </nav>
-<div id="body" >
+
+<div id="body" class="carousel slide d-none d-md-block">
     <div id="garantia" >
         <img src="assets/imagenes/sfsdsdf.jpg" style="width: 100%;">
         <div class="masInfo" id="servicioNecesitasModal" style="max-height: 80vh;">
@@ -174,3 +175,139 @@
     </div>
 </div>
 
+<div id="body" class="d-block d-sm-none d-none d-sm-block d-md-none">
+    <div id="notACarousel" class="d-block d-sm-none d-none d-sm-block d-md-none">
+        <div class="modal-content"  style="margin-top: 2vh;">
+            <div class="modal-header justify-content-start border-0 " >
+                <img src="assets/imagenes/000011111Amarillo.png" class="" width="30px" >
+                <h2 class="modal-title" style="color: #305E90; font-size: 2.5vh;"><b>¿Qué servicio necesitas?</b></h2>
+            </div>
+            <div class="modal-body " style="color: #305E90; padding-top: 0; padding-left: 2vw; padding-right: 2vw;  font-size: 2vh; height: 100%;">
+                <p style="color: grey; padding-top: 0;">¡Realiza tu Solicitud y Vive Fácil Te facilita de forma rapida a todos los profesionales!</p>
+                <form>
+                <div class="row" >
+                    <div class="col-12 colBlog" style="color: #305E90;padding: 10vw; padding-top: 0; padding-bottom: 0;">
+                        <div class="selecciones d-flex flex-row justify-content-around" style="max-width: 205vw;">
+                            <img src="assets/imagenes/15descuento.JPG" width="50%" >
+                        </div>
+                        <div class="selecciones">
+                            <h5 style="font-size: 2vh;">NOMBRES</h5>
+                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. Anita Perez">
+                        </div>
+                        <div class="selecciones">
+                            <h5 style="font-size: 2vh;">Correo</h5>
+                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. micorreo@gmail.com">
+                        </div>
+                        <div class="selecciones">
+                            <h5 style="font-size: 2vh;">SERVICIO</h5>
+                            <select
+                            class="form-select"
+                            formControlName="profesion"
+                            id="ge"
+                            aria-describedby="selectorServicioCrearFeedback" style="width: 100%;">
+                                <option selected disabled value="">
+                                Elija un servicio...
+                                </option>
+                                <option
+                                *ngFor="let c of profesiones"
+                                [id]="c"
+                                [value]="c"
+                                >
+                                {{ c.nombre }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="selecciones">
+                            <h5 style="font-size: 2vh;">TÍTULO</h5>
+                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. Filtraciones en la cocina">
+                        </div>
+                        <div class="selecciones">
+                            <h5 style="font-size: 2vh;">TELÉFONO</h5>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej. 098 765 4321">
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="d-inline-flex p-2 justify-content-center" style="width: 100%;">
+                    <button type="button" class="btn masInfo2" data-bs-toggle="modal" data-bs-target="#modalConfirmacion3"><p style="padding: 0; margin: 0; font-size: 2vh;"><b>Obtener <br> Descuento</b></p></button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ultimasSOlicitudes">
+        <div class="d-flex flex-row justify-content-around" style=" color:#433689; margin-top: 3vh;">
+
+            <h1 class="preMilton" style="font-size: 3vh;">Últimas</h1>
+        </div>
+        <div class="d-flex flex-row justify-content-around" style=" color:#433689;">
+            <h1 class="milton" style=" font-size: 7vh;">Solicitudes</h1>
+        </div>
+        <div id="solicitudes" style="background-color: #EFEFF4; padding-left: 5vw;padding-right: 5vw; padding-top: 2vw;padding-bottom: 2vw;">
+            <div class="erer row d-flex flex-row justify-content-around" >
+                <div class="tarjeta col-10" style="margin-bottom: 3vh;">
+                    <h2><b>Limpieza de piscina</b></h2>
+                    <p> Guayaquil, 21 abril 2023, 5:58p. m.</p>
+                    <p>Necesito urgente limpiar mi piscina de unos 15 metros de largo y 10 de ancho!</p>
+                </div>
+                <div class="tarjeta col-10" style="margin-bottom: 3vh;">
+                    <h2><b>Pintar Casa</b></h2>
+                    <p> Guayaquil, 21 abril 2023, 5:58p. m.</p>
+                    <p>Quiero pintar mi casa de color blanco. Solo interior. 4 habitaciones, 2 baños. Comedor y cocina.</p>
+                </div>
+                
+                <div class="tarjeta col-10" style="margin-bottom: 3vh;">
+                    <h2><b>Cheesecake de Frutilla</b></h2>
+                    <p> Guayaquil, 21 abril 2023, 5:58p. m.</p>
+                    <p>Quisiera un cheescake de frutilla para el viernes. Es para la fiesta de mi hija, que sea lo suficientemente grando para 7 personas.</p>
+                </div>
+                <div class="tarjeta col-10" style="margin-bottom: 3vh;">
+                    <h2><b>Limpieza de hogar</b></h2>
+                    <p> Guayaquil, 21 abril 2023, 5:58p. m.</p>
+                    <p>Necesito a alguien que me limpie mi patio trasero, está un desastre después de la fiesta de ayer.</p>
+                </div>
+                <div class="tarjeta col-10" style="margin-bottom: 3vh;">
+                    <h2><b>Decoración para fiesta</b></h2>
+                    <p> Guayaquil, 21 abril 2023, 5:58p. m.</p>
+                    <p>Necesito a alguien que sepa de decoraciones de matinés para mi hijo de 3 añitos con temática de superheroes. No va a ser muy grande, solo en el piso bajo de mi casa.</p>
+                </div>
+                <div class="tarjeta col-10" style="margin-bottom: 3vh;">
+                    <h2><b>Reparación de aire</b></h2>
+                    <p> Guayaquil, 21 abril 2023, 5:58p. m.</p>
+                    <p>Mi aire acondicionado ya no enfría mucho y empezó a tirar agua cada vez que lo prendo por más de 10 minutos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="servicios" class="contenedor">
+        <div class="column" >
+            <div class="icon" *ngFor="let serv of profesiones" style="padding: 0.5vw;">
+                <!-- <ion-label>{{serv.nombre}}</ion-label> -->
+                <img
+                src="https://tomesoft1.pythonanywhere.com{{serv.foto}}" width="120px"
+                />
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" tabindex="-1" role="dialog" id="modalConfirmacion3">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Solicitud enviada</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <p>Su solicitud fue enviada correctamente.</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)=" refresh()">Confirmar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

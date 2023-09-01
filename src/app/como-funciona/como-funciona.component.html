@@ -1,35 +1,36 @@
-<div>
+<nav class="bar navbar navbar-dark navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home/"><img src="assets/imagenes/logo-inicio.png" class="logo img-fluid rounded float-left" ></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse container-fluid" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 container-fluid">
+        <li class="nav-item">
+          <a class="navbar-brand" href="home/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="nosotros/">NOSOTROS</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="comofunciona/">¿CÓMO FUNCIONA?</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="eresprofesional/">¿ERES PROFESIONAL?</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="servicio/">SERVICIOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="contacto/">CONTACTO</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="d-none d-md-block">
     <div id="body">
-        <nav class="bar navbar navbar-dark navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="home/"><img src="assets/imagenes/logo-inicio.png" class="logo img-fluid rounded float-left" ></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse container-fluid" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 container-fluid">
-                  <li class="nav-item">
-                    <a class="navbar-brand" href="home/">HOME</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="navbar-brand" href="nosotros/">NOSOTROS</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="navbar-brand" href="comofunciona/">¿CÓMO FUNCIONA?</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="navbar-brand" href="eresprofesional/">¿ERES PROFESIONAL?</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="navbar-brand" href="servicio/">SERVICIOS</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="navbar-brand" href="contacto/">CONTACTO</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
         <div id="tipoUsuario" >
             <img src="assets/imagenes/dfgyyyyy.jpg" style="width: 100%;">
             <a href="#servicio"><img src="assets/imagenes/00002.png" width="250px" height="220px" class='plus-image'></a>
@@ -67,4 +68,40 @@
             <img src="assets/imagenes/fgfhhiiiii.jpg" style="width: 100%;">
         </div>
     </div>
+</div>
+
+<div class="d-block d-sm-none d-none d-sm-block d-md-none">
+  <div id="body">
+    <div id="tipoUsuario2" class="d-block d-sm-none d-none d-sm-block d-md-none" style="background-color: #433689; padding-top: 2vh; padding-bottom: 2vh;">
+      <div class="d-flex flex-row justify-content-around" style="margin: 4vw;">
+        <a href="servicio/"><img src="assets/imagenes/00002.png" width="200px" height="180px"></a>
+      </div>
+      <div class="d-flex flex-row justify-content-around" style="margin: 4vw;">
+        <a href="eresprofesional/"><img src="assets/imagenes/0000111112.png" width="200px" height="180px"></a>
+      </div>
+    </div>
+    
+    <app-funcion ></app-funcion>
+
+      <div id="garantia" style="background-color: #EFEFF4; padding-bottom: 1vh; padding-top: 1vh;" class="row contenedor">
+          <div class="col-12 d-flex flex-column justify-content-around" style="padding-top: 5vw;padding-right: 5vw;padding-bottom: 5vw;background-color: #EFEFF4; font-size: 2vh; color: #666666;">
+              <h1 style="font-size: 4vh;">Garantía Vive Fácil</h1>
+              <p>Queremos que duermas tranquilo, así que te lo ponemos fácil. Dispones de hasta x de garantía en tus servicios realizados con nuestros profesionales.</p>
+              <ul>
+                  <li><b>Totalmente GRATIS.</b> Sin gastos ni comisiones previas.</li>
+                  <li><b>Cubre el 100% de tu trabajo</b> contratado con timbrit.</li>
+                  <li><b>Hasta x</b> de cobertura en la reparación.</li>
+              </ul>
+              <p>Para poder acceder a la Garantía timbrit es necesario cumplir con algunas condiciones básicas*:</p>
+              <ul>
+                  <li>Contratar al profesional y pagar el servicio desde la  APP.</li>
+                  <li>Facilitar imágenes del antes y después del trabajo realizado.</li>
+                  <li>Tienes 15 días naturales para solicitar la garantía.</li>
+              </ul>
+              <p>* Revisa las condiciones<br>
+                  <a href="termino/"><u>Términos y Condiciones.</u></a></p>
+              
+          </div>
+      </div>
+  </div>
 </div>

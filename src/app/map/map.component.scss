@@ -13,3 +13,21 @@
     height: 100%;
     z-index: 0;
 }
+
+@media only screen and (max-width: 767px) {
+    .map-container {
+        z-index: -5;
+        margin: 30px;
+    }
+    
+    .map-frame {
+        border: 2px solid black;
+        height: 50vh;
+        z-index: -4;
+    }
+
+    #map {
+      width:100px;
+    height:300px;
+    }
+}

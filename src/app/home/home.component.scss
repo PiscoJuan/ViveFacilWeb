@@ -197,3 +197,15 @@ img{
     position: absolute;
     max-width: 35vw;
 }
+@media only screen and (max-width: 991px) {
+    .colBlog{
+        padding: 2vw;
+        padding-bottom: 5vh;
+        p {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+        }
+    }
+}

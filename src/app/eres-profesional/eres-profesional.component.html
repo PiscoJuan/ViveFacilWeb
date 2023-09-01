@@ -361,14 +361,16 @@
                             <label for="inputNombre" class="form-label">
                               <h3 class="m-0 p-0 fw-bold"><b>Dirección:</b></h3>
                             </label>
-                            <input
+                            <textarea
                               type="text"
                               formControlName="direccion"
                               class="form-control"
                               [ngClass]="isInvalidForm('direccion') ? 'is-invalid' : ''"
                               [value]="pendiente_seleccionada?.direccion"
                               style="background-color: #EEEEEE;"
-                            />
+                              rows="2"
+                              cols="25"
+                            ></textarea>
                             <div class="invalid-feedback">
                               {{ getErrorMessage(formEdit, "direccion") }}
                             </div>
@@ -389,7 +391,7 @@
                               "
                               [placeholder]="pendiente_seleccionada?.descripcion"
                               [value]="pendiente_seleccionada?.descripcion"
-                              rows="3"
+                              rows="5"
                               cols="25"
                               style="background-color: #EEEEEE;"
                             ></textarea>
@@ -712,14 +714,14 @@
           </div>
           
           
-          <div class="modal-footer">
+          <div class="modal-footer justify-content-center">
             <button
               data-bs-target="#modalConfirmacion2"
               data-bs-toggle="modal"
-              class="btn btn-success"
+              class="btn masInfo0"
               (click)="onAceptar()"
             >
-              Enviar
+              <b>ENVIAR</b>
             </button>
           </div>
           

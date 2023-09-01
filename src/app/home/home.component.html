@@ -1,16 +1,35 @@
-<nav class="navbar navbar-light bg-light">
-  <div class="bar container-fluid">
-    <img src="assets/imagenes/logo-inicio.png" class="logo img-fluid rounded float-left" >
-    <a class="navbar-brand" href="home/">HOME</a>
-    <a class="navbar-brand" href="nosotros/">NOSOTROS</a>
-    <a class="navbar-brand" href="comofunciona/">CÓMO FUNCIONA</a>
-    <a class="navbar-brand" href="eresprofesional/">¿ERES PROFESIONAL?</a>
-    <a class="navbar-brand" href="servicio/">SERVICIOS</a>
-    <a class="navbar-brand" href="contacto/">CONTACTO</a>
+<nav class="bar navbar navbar-dark navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home/"><img src="assets/imagenes/logo-inicio.png" class="logo img-fluid rounded float-left" ></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse container-fluid" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 container-fluid">
+        <li class="nav-item">
+          <a class="navbar-brand" href="home/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="nosotros/">NOSOTROS</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="comofunciona/">¿CÓMO FUNCIONA?</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="eresprofesional/">¿ERES PROFESIONAL?</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="servicio/">SERVICIOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand" href="contacto/">CONTACTO</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 <div id="body">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide d-none d-md-block" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -100,7 +119,69 @@
           <span class="sr-only">Next</span>
         </a>
     </div>
-
+    <div id="notACarousel" class="d-block d-sm-none d-none d-sm-block d-md-none">
+      <div >
+        <div >
+            <div class="modal-content"  >
+                <div class="modal-header justify-content-start border-0 " >
+                    <img src="assets/imagenes/000011111Amarillo.png" class="" width="30px" >
+                    <h2 class="modal-title" style="color: #305E90; font-size: 2.5vh;"><b>¿Qué servicio necesitas?</b></h2>
+                </div>
+                <div class="modal-body " style="color: #305E90; padding-top: 0; padding-left: 2vw; padding-right: 2vw;  font-size: 2vh; height: 100%;">
+                    <p style="color: grey; padding-top: 0;">¡Realiza tu Solicitud y Vive Fácil Te facilita de forma rapida a todos los profesionales!</p>
+                    <form>
+                    <div class="row" >
+                        <div class="col-12 colBlog" style="color: #305E90;padding: 10vw; padding-top: 0; padding-bottom: 0;">
+                            <div class="selecciones d-flex flex-row justify-content-around" style="max-width: 205vw;">
+                                <img src="assets/imagenes/15descuento.JPG" width="50%" >
+                            </div>
+                            <div class="selecciones">
+                                <h5 style="font-size: 2vh;">NOMBRES</h5>
+                                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. Anita Perez">
+                            </div>
+                            <div class="selecciones">
+                                <h5 style="font-size: 2vh;">Correo</h5>
+                                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. micorreo@gmail.com">
+                            </div>
+                            <div class="selecciones">
+                                <h5 style="font-size: 2vh;">SERVICIO</h5>
+                                <select
+                                class="form-select"
+                                formControlName="profesion"
+                                id="ge"
+                                aria-describedby="selectorServicioCrearFeedback" style="width: 100%;">
+                                  <option selected disabled value="">
+                                    Elija un servicio...
+                                  </option>
+                                  <option
+                                    *ngFor="let c of servicios"
+                                    [id]="c"
+                                    [value]="c"
+                                  >
+                                    {{ c.nombre }}
+                                  </option>
+                                </select>
+                            </div>
+                            <div class="selecciones">
+                                <h5 style="font-size: 2vh;">TÍTULO</h5>
+                                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. Filtraciones en la cocina">
+                            </div>
+                            <div class="selecciones">
+                                <h5 style="font-size: 2vh;">TELÉFONO</h5>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej. 098 765 4321">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="d-inline-flex p-2 justify-content-center" style="width: 100%;">
+                        <button type="button" class="btn masInfo2" data-bs-toggle="modal" data-bs-target="#modalConfirmacion3"><p style="padding: 0; margin: 0; font-size: 2vh;"><b>Obtener <br> Descuento</b></p></button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
     <div id="tipoUsuario" >
         <img src="assets/imagenes/dfgyyyyy.jpg" style="width: 100%;">
         <a href="servicio/"><img src="assets/imagenes/00002.png" width="250px" height="220px" class='plus-image'></a>
@@ -126,7 +207,7 @@
       </div>
     </div>
 
-    <div id="garantia" >
+    <div id="garantia" class="d-none d-md-block">
       <img src="assets/imagenes/uiytt.jpg" style="width: 100%;">
       <a href="/comofunciona/#garantia" class="masInfo btn  btn-lg"><b>MÁS <br> INFORMACIÓN</b></a>
     </div>
@@ -160,7 +241,8 @@
         </div>
       </div>
     </div>
-    <div id="descarga">
+
+    <div id="descarga" class="d-none d-md-block">
       <img src="assets/imagenes/bannerssss.jpg" style="width: 100%;">
       <a href="contacto/" class="masInfo3 btn btn-lg"><b>Contacto</b></a>
       <img src="assets/imagenes/qr.png" width="200px" height="200px" class='qrcode'>

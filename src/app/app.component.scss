@@ -49,3 +49,24 @@ svg{
     position: relative;
     bottom: 0;
 }
+
+.nav-item{
+    color: white;
+}
+
+@media only screen and (max-width: 991px) {
+    .horarios{
+        background-color: #433689;
+        color: white;
+        p{
+            margin-top: auto;
+            margin-bottom: auto;
+            font-size: small;
+            padding-left: 1vw;
+        }
+        
+    }
+    .logo{
+        width: 100px;
+    }
+}

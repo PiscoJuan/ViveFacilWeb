@@ -8,12 +8,14 @@ import { EresProfesionalComponent } from './eres-profesional/eres-profesional.co
 import { ContactoComponent } from './contacto/contacto.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { TerminoComponent } from './termino/termino.component';
+import { ComoFunciona2Component } from './como-funciona2/como-funciona2.component';
 
 const routes: Routes = [
   {path: 'home' , component: HomeComponent},
   {path: 'nosotros' , component: NosotrosComponent},
   {path: 'formulario' , component: FormularioComponent},
   {path: 'comofunciona' , component: ComoFuncionaComponent},
+  {path: 'comofunciona2' , component: ComoFunciona2Component},
   {path: 'eresprofesional' , component: EresProfesionalComponent},
   {path: 'contacto' , component: ContactoComponent},
   {path: 'servicio' , component: ServiciosComponent},

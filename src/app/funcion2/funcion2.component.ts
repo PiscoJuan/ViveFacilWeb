@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-funcion',
-  templateUrl: './funcion.component.html',
-  styleUrls: ['./funcion.component.scss']
+  selector: 'app-funcion2',
+  templateUrl: './funcion2.component.html',
+  styleUrls: ['./funcion2.component.scss']
 })
-export class FuncionComponent implements OnInit {
+export class Funcion2Component implements OnInit {
   direccionNums="assets/imagenes/num1.png"
   direccionNums1="assets/imagenes/iconNumeros/0101.png"
   direccionNums2="assets/imagenes/iconNumeros/02.png"

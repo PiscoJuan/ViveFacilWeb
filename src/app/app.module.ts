@@ -15,6 +15,8 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { FuncionComponent } from './funcion/funcion.component';
 import { MapComponent } from './map/map.component';
 import { TerminoComponent } from './termino/termino.component';
+import { ComoFunciona2Component } from './como-funciona2/como-funciona2.component';
+import { Funcion2Component } from './funcion2/funcion2.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { TerminoComponent } from './termino/termino.component';
     ContactoComponent,
     FuncionComponent,
     MapComponent,
-    TerminoComponent
+    TerminoComponent,
+    ComoFunciona2Component,
+    Funcion2Component
   ],
   imports: [
     BrowserModule,

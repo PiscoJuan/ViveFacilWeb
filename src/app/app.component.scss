@@ -11,30 +11,11 @@
 .navbar{
     padding: 0;
 }
-.bar{
-    background-color: #171B21;
-    color: white;
-    a{
-        color: white;
-        font-size: large;
-    }
-    a:hover{
-        color: yellow;
-    }
-}
 
 .purpleLine{
     background-color: #887BC6;
 }
 
-.logo{
-    width: 8vw;
-    margin-right: 10vw;
-    margin-left: 5vw;
-}
-svg{
-    margin-right: 2vw;
-}
 .navbarTopp {
     overflow: hidden;
     background-color: #333;
@@ -52,21 +33,4 @@ svg{
 
 .nav-item{
     color: white;
-}
-
-@media only screen and (max-width: 991px) {
-    .horarios{
-        background-color: #433689;
-        color: white;
-        p{
-            margin-top: auto;
-            margin-bottom: auto;
-            font-size: small;
-            padding-left: 1vw;
-        }
-        
-    }
-    .logo{
-        width: 100px;
-    }
 }

@@ -96,6 +96,11 @@ img{
     padding-right: 75px;
     background-color: #FFE92F;
 }
+.masInfo9 {
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #FFE92F;
+}
 .imgBlog{
     width: 100%;
     border-radius: 10%;
@@ -191,10 +196,10 @@ img{
     opacity: 0;
 }
 .masInfo5 {
-    left: 5%;
+    left: 13%;
     top: 5%;
     position: absolute;
-    max-width: 35vw;
+    max-width: 30vw;
 }
 @media only screen and (max-width: 991px) {
     .colBlog{

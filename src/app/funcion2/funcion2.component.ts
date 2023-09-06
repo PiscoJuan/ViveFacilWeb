@@ -20,7 +20,6 @@ export class Funcion2Component implements OnInit {
       const scrollPosition = window.scrollY;
     
       const sections = document.querySelectorAll('div[id^="part"]'); // Seleccionar todas las secciones con IDs que empiecen por "section"
-      console.log(sections)
       let tempSectionId = '';
       let currentSectionId = '';
       var p1=0
@@ -38,49 +37,42 @@ export class Funcion2Component implements OnInit {
             p1=p1+1
             if(p1>1){
               currentSectionId = section.getAttribute('id') || '';
-              console.log(currentSectionId)
             }
           }if(tempSectionId == "part2"){
             p2=p2+1
             if(p2>1){
               currentSectionId = section.getAttribute('id') || '';
-              console.log(currentSectionId)
             }
           }if(tempSectionId == "part3"){
             p3=p3+1
             if(p3>1){
               currentSectionId = section.getAttribute('id') || '';
-              console.log(currentSectionId)
             }
           }if(tempSectionId == "part4"){
             p4=p4+1
             if(p4>1){
               currentSectionId = section.getAttribute('id') || '';
-              console.log(currentSectionId)
             }
           }if(tempSectionId == "part5"){
             p5=p5+1
             if(p5>1){
               currentSectionId = section.getAttribute('id') || '';
-              console.log(currentSectionId)
             }
           }if(tempSectionId == "part6"){
             p6=p6+1
             if(p6>1){
               currentSectionId = section.getAttribute('id') || '';
-              console.log(currentSectionId)
             }
           }if(tempSectionId == "part7"){
             p7=p7+1
             if(p7>1){
               currentSectionId = section.getAttribute('id') || '';
-              console.log(currentSectionId)
             }
           }
         }
       });
       const el = document.getElementById('body4');
-      console.log('Sección actual:', currentSectionId);
+      const elementosBod2 = document.getElementsByClassName('body2');
       if(currentSectionId == "part1"){
         this.direccionNums1="assets/imagenes/iconNumeros/0101.png"
         this.direccionNums2="assets/imagenes/iconNumeros/02.png"
@@ -90,6 +82,11 @@ export class Funcion2Component implements OnInit {
         this.direccionNums6="assets/imagenes/iconNumeros/06.png"
         if (el != null) {
           el.style.visibility = 'visible';
+        }
+        var index = 0, length = elementosBod2.length;
+        for ( ; index < length; index++) {
+          const eltemp= elementosBod2[index] as HTMLElement
+          eltemp.style.display = "block";
         }
       }else if(currentSectionId == "part2"){
         this.direccionNums1="assets/imagenes/iconNumeros/01.png"
@@ -101,6 +98,11 @@ export class Funcion2Component implements OnInit {
         if (el != null) {
           el.style.visibility = 'visible';
         }
+        var index = 0, length = elementosBod2.length;
+        for ( ; index < length; index++) {
+          const eltemp= elementosBod2[index] as HTMLElement
+          eltemp.style.display = "block";
+        }
       }else if(currentSectionId == "part3"){
         this.direccionNums1="assets/imagenes/iconNumeros/01.png"
         this.direccionNums2="assets/imagenes/iconNumeros/02.png"
@@ -110,6 +112,11 @@ export class Funcion2Component implements OnInit {
         this.direccionNums6="assets/imagenes/iconNumeros/06.png"
         if (el != null) {
           el.style.visibility = 'visible';
+        }
+        var index = 0, length = elementosBod2.length;
+        for ( ; index < length; index++) {
+          const eltemp= elementosBod2[index] as HTMLElement
+          eltemp.style.display = "block";
         }
       }else if(currentSectionId == "part4"){
         this.direccionNums1="assets/imagenes/iconNumeros/01.png"
@@ -121,6 +128,11 @@ export class Funcion2Component implements OnInit {
         if (el != null) {
           el.style.visibility = 'visible';
         }
+        var index = 0, length = elementosBod2.length;
+        for ( ; index < length; index++) {
+          const eltemp= elementosBod2[index] as HTMLElement
+          eltemp.style.display = "block";
+        }
       }else if(currentSectionId == "part5"){
         this.direccionNums1="assets/imagenes/iconNumeros/01.png"
         this.direccionNums2="assets/imagenes/iconNumeros/02.png"
@@ -130,6 +142,11 @@ export class Funcion2Component implements OnInit {
         this.direccionNums6="assets/imagenes/iconNumeros/06.png"
         if (el != null) {
           el.style.visibility = 'visible';
+        }
+        var index = 0, length = elementosBod2.length;
+        for ( ; index < length; index++) {
+          const eltemp= elementosBod2[index] as HTMLElement
+          eltemp.style.display = "block";
         }
       }else if(currentSectionId == "part6"){
         this.direccionNums1="assets/imagenes/iconNumeros/01.png"
@@ -141,10 +158,20 @@ export class Funcion2Component implements OnInit {
         if (el != null) {
           el.style.visibility = 'visible';
         }
+        var index = 0, length = elementosBod2.length;
+        for ( ; index < length; index++) {
+          const eltemp= elementosBod2[index] as HTMLElement
+          eltemp.style.display = "block";
+        }
       }
       if(currentSectionId == "part7"){
         if (el != null) {
           el.style.visibility = 'hidden';
+        }
+        var index = 0, length = elementosBod2.length;
+        for ( ; index < length; index++) {
+          const eltemp= elementosBod2[index] as HTMLElement
+          eltemp.style.display = "none";
         }
       }
     });

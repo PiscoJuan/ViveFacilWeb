@@ -1,10 +1,10 @@
 
 #body{
-    padding-top: 10px;
     z-index: 50;
     top:0;
     position: relative;
     display: block;
+    height: 100vh;
 }
 #qeweqw{
     z-index: 50;
@@ -17,67 +17,58 @@
     bottom: 0%;
     z-index: 10;
     position: sticky;
-    ;
 }
 #body3{
     padding-top: 10px;
     top: 15%;
     z-index: -2;
     position: fixed;
+    height: 100vh;
 }
 #body35{
     padding-top: 10px;
     top: 15%;
     z-index: -20;
     position: fixed;
+    height: 100vh;
 }
 #body4{
     padding-top: 10px;
     top: 15%;
     z-index: 0;
     position: fixed;
+    height: 100vh;
 }
 #bodyMenos5{
-    height: 100vh;
     top: 15%;
     z-index: -5;
     position: sticky;
 }
 #bodyMenos6{
-    height: 100vh;
     top: 15%;
     z-index: -6;
     position: sticky;
 }
 #bodyMenos7{
-    height: 100vh;
     top: 15%;
     z-index: -7;
     position: sticky;
 }
 #bodyMenos8{
-    height: 100vh;
     top: 15%;
     z-index: -8;
     position: sticky;
 }
 #bodyMenos9{
-    height: 100vh;
     top: 15%;
     z-index: -9;
     position: sticky;
 }
 #bodyMenos10{
-    height: 100vh;
     top: 15%;
     z-index: -10;
     position: sticky;
 }
-
-// .carousel-control-prev-icon{
-//     background-color: #887BC6;
-//     padding: 10px;
-// }
 .masInfo0 {
     left: 77%;
     top: 80%;
@@ -247,4 +238,7 @@
     padding-right: 50px;
     background-color: #F2902A;
     font-size: medium;
+}
+.contenedor2{
+    height: 100vh;
 }

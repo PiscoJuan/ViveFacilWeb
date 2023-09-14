@@ -1,0 +1,39 @@
+#body{
+    padding-left: 10vw;
+    padding-right: 10vw;
+    font-size: x-large;
+    .headerrr{
+        text-align:center;
+        color:#433689;
+    }
+    .milton{
+        font-family: "Milton Keynes";
+        font-size:12vh;
+        src: url('/assets/fonts/MiltonKeynes.ttf') format('truetype');
+    }
+    .preMilton{
+        margin-bottom: 3vh;
+    }
+}
+
+#body2{
+    
+    font-size: medium;
+    .headerrr{
+        text-align:center;
+        color:#433689;
+    }
+    .milton{
+        font-family: "Milton Keynes";
+        font-size:xxx-large;
+        src: url('/assets/fonts/MiltonKeynes.ttf') format('truetype');
+    }
+    .preMilton{
+        margin-bottom: 0;
+        font-size:large;
+        margin-bottom: 1vh;
+    }
+    h1{
+        font-size: x-large;
+    }
+}

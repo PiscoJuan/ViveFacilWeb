@@ -40,56 +40,103 @@
                 </div>
                 <div class="modal-body" style="color: #305E90; padding-top: 0; padding-left: 2vw; padding-right: 2vw;  font-size: 2vh; height: 100%;">
                     <p style="color: grey; padding-top: 0;">¡Realiza tu Solicitud y Vive Fácil Te facilita de forma rapida a todos los profesionales!</p>
-                    <form>
-                    <div class="row" style="max-height: 80vh;">
-                        <div class="col-6 colBlog" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-left: 1vw; ">
+                    <!-- FORM -->
+                    <form [formGroup]="formEdit">
+                        <div class="row" style="max-height: 80vh;">
+                          <div class="col-6 colBlog" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-left: 1vw; ">
                             <div class="selecciones" style="max-width: 100vw;">
-                                <img src="assets/imagenes/15descuento.JPG" width="100%" >
+                              <img src="assets/imagenes/15descuento.JPG" width="100%" >
                             </div>
+                            <!-- Nombres -->
                             <div class="selecciones">
-                                <h5 style="font-size: 2vh;">NOMBRES</h5>
-                                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. Anita Perez">
+                              <h5 style="font-size: 2vh;">NOMBRES</h5>
+                              <input 
+                              type="text"
+                              formControlName="nombre"
+                              class="form-control"
+                              [ngClass]="isInvalidForm('nombre') ? 'is-invalid' : ''"
+                              placeholder="Ej. Anita Perez"
+                              />
+                              <div class="invalid-feedback">
+                                {{ getErrorMessage(formEdit, "nombre") }}
+                              </div>
                             </div>
+                            <!-- Correo -->
                             <div class="selecciones">
-                                <h5 style="font-size: 2vh;">Correo</h5>
-                                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. micorreo@gmail.com">
+                              <h5 style="font-size: 2vh;">Correo</h5>
+                              <input 
+                              type="text"
+                              formControlName="correo"
+                              class="form-control"
+                              [ngClass]="isInvalidForm('correo') ? 'is-invalid' : ''"
+                              placeholder="Ej. micorreo@gmail.com"
+                              />
+                              <div class="invalid-feedback">
+                                {{ getErrorMessage(formEdit, "correo") }}
+                              </div>
                             </div>
-                        </div>
-                        <div class="col-6 colBlog text-truncate" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-right: 1vw; ">
+                          </div>
+                          <div class="col-6 colBlog text-truncate" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-right: 1vw; ">
+                            <!-- Profesion -->
                             <div class="selecciones">
-                                <h5 style="font-size: 2vh;">SERVICIO</h5>
-                                <select
+                              <h5 style="font-size: 2vh;">SERVICIO</h5>
+                              <select
                                 class="form-select"
+                                [ngClass]="isInvalidForm('profesion') ? 'is-invalid' : ''"
                                 formControlName="profesion"
                                 id="ge"
-                                aria-describedby="selectorServicioCrearFeedback" style="width: 100%;">
+                                aria-describedby="selectorServicioCrearFeedback" style="width: 100%;"
+                              >
                                 <option selected disabled value="">
-                                    Elija un servicio...
+                                  Elija un servicio...
                                 </option>
                                 <option
-                                    *ngFor="let c of profesiones"
-                                    [id]="c"
-                                    [value]="c"
+                                  *ngFor="let c of servicios"
+                                  [id]="c.id"
+                                  [value]="c.id"
                                 >
-                                    {{ c.nombre }}
+                                  {{ c.nombre }}
                                 </option>
-                                </select>
+                              </select>
                             </div>
+                            <!-- Titulo -->
                             <div class="selecciones">
-                                <h5 style="font-size: 2vh;">TÍTULO</h5>
-                                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. Filtraciones en la cocina">
+                              <h5 style="font-size: 2vh;">TÍTULO</h5>
+                              <textarea 
+                                type="text"
+                                formControlName="titulo"
+                                class="form-control"
+                                [ngClass]="isInvalidForm('titulo') ? 'is-invalid' : ''"
+                                placeholder="Ej. Filtraciones en la cocina">
+                              </textarea>
+                              <div class="invalid-feedback">
+                                {{ getErrorMessage(formEdit, "titulo") }}
+                              </div>
                             </div>
+                            <!-- Telefono -->
                             <div class="selecciones">
-                                <h5 style="font-size: 2vh;">TELÉFONO</h5>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej. 098 765 4321">
+                              <h5 style="font-size: 2vh;">TELÉFONO</h5>
+                              <input 
+                                type="text"
+                                formControlName="telefono"
+                                class="form-control"
+                                (keypress)="numberOnlyPluss($event)"
+                                [ngClass]="isInvalidForm('telefono') ? 'is-invalid' : ''"
+                                placeholder="Ej. 098 765 4321"
+                              />
+                              <div class="invalid-feedback">
+                                {{ getErrorMessage(formEdit, "telefono") }}
+                              </div>
                             </div>
-                            
+                          </div>
                         </div>
-                    </div>
-                    <div class="d-inline-flex p-2 justify-content-center" style="width: 100%;">
-                        <button type="button" class="btn masInfo9" data-bs-toggle="modal" data-bs-target="#modalConfirmacion3"><p style="padding: 0; margin: 0; font-size: 1.8vh;"><b>Obtener <br> Descuento</b></p></button>
-                    </div>
-                    </form>
+                      <div class="d-inline-flex p-2 justify-content-center" style="width: 100%;">
+                          <button type="button" class="btn masInfo9" data-bs-toggle="modal" data-bs-target="#modalConfirmacion3"
+                          (click)="onAceptar()"
+                          >
+                          <p style="padding: 0; margin: 0; font-size: 1.8vh;"><b>Obtener <br> Descuento</b></p></button>
+                      </div>
+                      </form>
                 </div>
             </div>
         </div>
@@ -141,7 +188,7 @@
 
     <div id="servicios" class="contenedor">
         <div class="column" >
-            <div class="icon" *ngFor="let serv of profesiones" style="padding: 0.5vw;">
+            <div class="icon" *ngFor="let serv of servicios" style="padding: 0.5vw;">
                 <!-- <ion-label>{{serv.nombre}}</ion-label> -->
                 <img
                 src="https://tomesoft1.pythonanywhere.com{{serv.foto}}" width="120px"
@@ -152,25 +199,6 @@
     
     <div id="100porcien" >
         <img src="assets/imagenes/100pporcien.JPG" style="width: 100%;">
-    </div>
-
-    <div class="modal" tabindex="-1" role="dialog" id="modalConfirmacion3">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title">Solicitud enviada</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-            <p>Su solicitud fue enviada correctamente.</p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)=" refresh()">Confirmar</button>
-            </div>
-        </div>
-        </div>
     </div>
 </div>
 
@@ -183,54 +211,103 @@
             </div>
             <div class="modal-body " style="color: #305E90; padding-top: 0; padding-left: 2vw; padding-right: 2vw;  font-size: 2vh; height: 100%;">
                 <p style="color: grey; padding-top: 0;">¡Realiza tu Solicitud y Vive Fácil Te facilita de forma rapida a todos los profesionales!</p>
-                <form>
-                <div class="row" >
-                    <div class="col-12 colBlog" style="color: #305E90;padding: 10vw; padding-top: 0; padding-bottom: 0;">
-                        <div class="selecciones d-flex flex-row justify-content-around" style="max-width: 205vw;">
-                            <img src="assets/imagenes/15descuento.JPG" width="50%" >
+                <!-- FORM -->
+                <form [formGroup]="formEdit">
+                    <div class="row" style="max-height: 80vh;">
+                      <div class="col-6 colBlog" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-left: 1vw; ">
+                        <div class="selecciones" style="max-width: 100vw;">
+                          <img src="assets/imagenes/15descuento.JPG" width="100%" >
                         </div>
+                        <!-- Nombres -->
                         <div class="selecciones">
-                            <h5 style="font-size: 2vh;">NOMBRES</h5>
-                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. Anita Perez">
+                          <h5 style="font-size: 2vh;">NOMBRES</h5>
+                          <input 
+                          type="text"
+                          formControlName="nombre"
+                          class="form-control"
+                          [ngClass]="isInvalidForm('nombre') ? 'is-invalid' : ''"
+                          placeholder="Ej. Anita Perez"
+                          />
+                          <div class="invalid-feedback">
+                            {{ getErrorMessage(formEdit, "nombre") }}
+                          </div>
                         </div>
+                        <!-- Correo -->
                         <div class="selecciones">
-                            <h5 style="font-size: 2vh;">Correo</h5>
-                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. micorreo@gmail.com">
+                          <h5 style="font-size: 2vh;">Correo</h5>
+                          <input 
+                          type="text"
+                          formControlName="correo"
+                          class="form-control"
+                          [ngClass]="isInvalidForm('correo') ? 'is-invalid' : ''"
+                          placeholder="Ej. micorreo@gmail.com"
+                          />
+                          <div class="invalid-feedback">
+                            {{ getErrorMessage(formEdit, "correo") }}
+                          </div>
                         </div>
+                      </div>
+                      <div class="col-6 colBlog text-truncate" style="color: #305E90; padding-top: 0;padding-bottom: 0;padding-right: 1vw; ">
+                        <!-- Profesion -->
                         <div class="selecciones">
-                            <h5 style="font-size: 2vh;">SERVICIO</h5>
-                            <select
+                          <h5 style="font-size: 2vh;">SERVICIO</h5>
+                          <select
                             class="form-select"
+                            [ngClass]="isInvalidForm('profesion') ? 'is-invalid' : ''"
                             formControlName="profesion"
                             id="ge"
-                            aria-describedby="selectorServicioCrearFeedback" style="width: 100%;">
-                                <option selected disabled value="">
-                                Elija un servicio...
-                                </option>
-                                <option
-                                *ngFor="let c of profesiones"
-                                [id]="c"
-                                [value]="c"
-                                >
-                                {{ c.nombre }}
-                                </option>
-                            </select>
+                            aria-describedby="selectorServicioCrearFeedback" style="width: 100%;"
+                          >
+                            <option selected disabled value="">
+                              Elija un servicio...
+                            </option>
+                            <option
+                              *ngFor="let c of servicios"
+                              [id]="c.id"
+                              [value]="c.id"
+                            >
+                              {{ c.nombre }}
+                            </option>
+                          </select>
                         </div>
+                        <!-- Titulo -->
                         <div class="selecciones">
-                            <h5 style="font-size: 2vh;">TÍTULO</h5>
-                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ej. Filtraciones en la cocina">
+                          <h5 style="font-size: 2vh;">TÍTULO</h5>
+                          <textarea 
+                            type="text"
+                            formControlName="titulo"
+                            class="form-control"
+                            [ngClass]="isInvalidForm('titulo') ? 'is-invalid' : ''"
+                            placeholder="Ej. Filtraciones en la cocina">
+                          </textarea>
+                          <div class="invalid-feedback">
+                            {{ getErrorMessage(formEdit, "titulo") }}
+                          </div>
                         </div>
+                        <!-- Telefono -->
                         <div class="selecciones">
-                            <h5 style="font-size: 2vh;">TELÉFONO</h5>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej. 098 765 4321">
+                          <h5 style="font-size: 2vh;">TELÉFONO</h5>
+                          <input 
+                            type="text"
+                            formControlName="telefono"
+                            class="form-control"
+                            (keypress)="numberOnlyPluss($event)"
+                            [ngClass]="isInvalidForm('telefono') ? 'is-invalid' : ''"
+                            placeholder="Ej. 098 765 4321"
+                          />
+                          <div class="invalid-feedback">
+                            {{ getErrorMessage(formEdit, "telefono") }}
+                          </div>
                         </div>
-                        
+                      </div>
                     </div>
-                </div>
-                <div class="d-inline-flex p-2 justify-content-center" style="width: 100%;">
-                    <button type="button" class="btn masInfo2" data-bs-toggle="modal" data-bs-target="#modalConfirmacion3"><p style="padding: 0; margin: 0; font-size: 2vh;"><b>Obtener <br> Descuento</b></p></button>
-                </div>
-                </form>
+                  <div class="d-inline-flex p-2 justify-content-center" style="width: 100%;">
+                      <button type="button" class="btn masInfo9" data-bs-toggle="modal" data-bs-target="#modalConfirmacion3"
+                      (click)="onAceptar()"
+                      >
+                      <p style="padding: 0; margin: 0; font-size: 1.8vh;"><b>Obtener <br> Descuento</b></p></button>
+                  </div>
+                  </form>
             </div>
         </div>
     </div>
@@ -282,7 +359,7 @@
 
     <div id="servicios" class="contenedor">
         <div class="column" >
-            <div class="icon" *ngFor="let serv of profesiones" style="padding: 0.5vw;">
+            <div class="icon" *ngFor="let serv of servicios" style="padding: 0.5vw;">
                 <!-- <ion-label>{{serv.nombre}}</ion-label> -->
                 <img
                 src="https://tomesoft1.pythonanywhere.com{{serv.foto}}" width="120px"
@@ -290,23 +367,24 @@
             </div>
         </div>
     </div>
-    
-    <div class="modal" tabindex="-1" role="dialog" id="modalConfirmacion3">
-        <div class="modal-dialog" role="document">
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="modalConfirmacion3">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <h5 class="modal-title">Solicitud enviada</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+                <h5 class="modal-title">Solicitud enviada</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-            <p>Su solicitud fue enviada correctamente.</p>
+                <p>Su solicitud fue enviada correctamente.</p>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)=" refresh()">Confirmar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)=" refresh()">Confirmar</button>
             </div>
-        </div>
         </div>
     </div>
 </div>

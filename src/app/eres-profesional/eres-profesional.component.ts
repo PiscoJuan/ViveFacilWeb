@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormularioService } from '../servicios/formulario.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ApiService } from '../services/api.service'
 @Component({
   selector: 'app-eres-profesional',
   templateUrl: './eres-profesional.component.html',
@@ -36,7 +37,7 @@ export class EresProfesionalComponent  {
   copiaLicenciaNombre= null;
   copiaDocumentosNombre= null;
   // imgPerfil: string| null = null;
-  
+
   formEdit: FormGroup = new FormGroup({
     nombre: new FormControl('', [Validators.required]),
     apellidos: new FormControl('', [Validators.required]),
@@ -71,16 +72,16 @@ export class EresProfesionalComponent  {
     // foto: new FormControl('', [Validators.required]),
   });
   servicios: any[] = [];
-  constructor(private formService: FormularioService,private sanitizer: DomSanitizer, ) { 
+  constructor(private formService: FormularioService,private sanitizer: DomSanitizer, private api: ApiService) {
     this.formService.getServicios().subscribe((resp: any) => {
       console.log("resp")
       console.log(resp)
         this.profesiones= resp
-    }); 
+    });
     this.formService.getServicios().subscribe((resp: any) => {
       console.log(resp)
         this.servicios= resp
-    }); 
+    });
   }
   onAceptar() {
     console.log(this.formEdit.value)
@@ -108,11 +109,18 @@ export class EresProfesionalComponent  {
     }
     console.log("pendiente")
     console.log(pendiente)
-
-    this.formService.crear_proveedor_pendiente(pendiente).subscribe((resp: any) => {
-      console.log("resp")
-      console.log(resp)
+    this.api.validarProveedorPendiente(this.formEdit.value.correo).subscribe((resp: any) => {
+      if (resp == 'nuevo') {
+        this.formService.crear_proveedor_pendiente(pendiente).subscribe((resp: any) => {
+          console.log("resp")
+          console.log(resp)
+        })
+      }
+      else {
+        console.log('Ya existe')
+      }
     })
+
 
   }
    establecerMensaje(mensaje: string, tipo: string) {
@@ -129,7 +137,7 @@ export class EresProfesionalComponent  {
     }
     this.mensajeAlerta = mensaje;
   }
-  
+
   isInvalidForm(subForm: string) {
 
 
@@ -327,4 +335,4 @@ export class EresProfesionalComponent  {
   refresh(): void {
     window.location.reload();
   }
-}  
+}

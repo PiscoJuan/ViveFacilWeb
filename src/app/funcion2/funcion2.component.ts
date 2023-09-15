@@ -31,7 +31,7 @@ export class Funcion2Component implements OnInit {
         var p7=0
       sections.forEach((section) => {
         let sectionTop = (section as HTMLElement).offsetTop;
-        if (scrollPosition >= sectionTop-10) {
+        if (scrollPosition >= sectionTop-100) {
           tempSectionId = section.getAttribute('id') || '';
           if(tempSectionId == "part1"){
             p1=p1+1

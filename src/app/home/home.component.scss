@@ -21,7 +21,7 @@ img{
 #tipoUsuario{
     position: relative;
     display: block;
-    
+
 }
 .plus-image {
     left: 35%;
@@ -38,7 +38,7 @@ img{
     margin-left: -25px;
     z-index: 30;
     opacity: 0;
-    
+
 }
 .plus-image15:hover{
     opacity: 100%;
@@ -113,6 +113,12 @@ img{
         -webkit-line-clamp: 7;
         -webkit-box-orient: vertical;
     }
+  h3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 }
 #descarga{
     background-color: #887BC6;

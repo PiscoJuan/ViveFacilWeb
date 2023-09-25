@@ -27,7 +27,7 @@ import { PrestadorComponent } from './blogs/prestador/prestador.component';
 import { ProfesionalAdecuadoComponent } from './blogs/profesional-adecuado/profesional-adecuado.component';
 import { SolucionEmprendedoresComponent } from './blogs/solucion-emprendedores/solucion-emprendedores.component';
 import { ConfianzaComponent } from './blogs/confianza/confianza.component';
-
+import { NgSelectModule } from '@ng-select/ng-select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +57,7 @@ import { ConfianzaComponent } from './blogs/confianza/confianza.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule, ReactiveFormsModule, HttpClientModule
+    FormsModule, ReactiveFormsModule, HttpClientModule,NgSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -76,7 +76,9 @@ export class EresProfesionalComponent  {
     this.formService.getServicios().subscribe((resp: any) => {
       console.log("resp")
       console.log(resp)
-        this.profesiones= resp
+      for (let i=0; i<resp.length; i++){
+        this.profesiones= [...this.profesiones, resp[i].nombre]
+      }
     });
     this.formService.getServicios().subscribe((resp: any) => {
       console.log(resp)

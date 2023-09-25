@@ -704,27 +704,27 @@
                               <label for="selectorServicioCrear" class="form-label"
                                 ><h3 class="m-0 p-0 fw-bold"><b>Profesión:</b></h3></label
                               >
-                              <select
+                              <ng-select
+                              style="background-color: #EEEEEE;"
+                                [items]="profesiones"
                                 class="form-select"
                                 [ngClass]="
                                   isInvalidForm('profesion') ? 'is-invalid' : ''
                                 "
                                 formControlName="profesion"
                                 id="ge"
+                                
                                 aria-describedby="selectorServicioCrearFeedback"
-                                style="width: 100%;"
+                                [multiple]="true">
+                              </ng-select>
+                              <div
+                                id="selectorServicioCrearFeedback"
+                                class="invalid-feedback"
                               >
-                                <option selected disabled value="">
-                                  Elija una profesión...
-                                </option>
-                                <option
-                                  *ngFor="let c of profesiones"
-                                  [id]="c.id"
-                                  [value]="c.id"
-                                >
-                                  {{ c.nombre }}
-                                </option>
-                              </select>
+                                {{ getErrorMessage(formEdit, "profesion") }}
+                              </div>
+
+
                               <div
                                 id="selectorServicioCrearFeedback"
                                 class="invalid-feedback"
@@ -1425,27 +1425,26 @@
                             <label for="selectorServicioCrear" class="form-label"
                               ><h3 class="m-0 p-0 fw-bold"><b>Profesión:</b></h3></label
                             >
-                            <select
-                              class="form-select"
-                              [ngClass]="
-                                isInvalidForm('profesion') ? 'is-invalid' : ''
-                              "
-                              formControlName="profesion"
-                              id="ge"
-                              aria-describedby="selectorServicioCrearFeedback"
-                              style="width: 100%;"
-                            >
-                              <option selected disabled value="">
-                                Elija una profesión...
-                              </option>
-                              <option
-                                *ngFor="let c of profesiones"
-                                [id]="c.id"
-                                [value]="c.id"
+                            <ng-select
+                              style="background-color: #EEEEEE;"
+                                [items]="profesiones"
+                                class="form-select"
+                                [ngClass]="
+                                  isInvalidForm('profesion') ? 'is-invalid' : ''
+                                "
+                                formControlName="profesion"
+                                id="ge"
+                                
+                                aria-describedby="selectorServicioCrearFeedback"
+                                [multiple]="true">
+                              </ng-select>
+                              <div
+                                id="selectorServicioCrearFeedback"
+                                class="invalid-feedback"
                               >
-                                {{ c.nombre }}
-                              </option>
-                            </select>
+                                {{ getErrorMessage(formEdit, "profesion") }}
+                              </div>
+
                             <div
                               id="selectorServicioCrearFeedback"
                               class="invalid-feedback"

@@ -152,9 +152,10 @@
     margin-bottom: 0;
 }
 .milton{
-    font-family: "Milton Keynes";
+        font-weight: bold;
+    font-family: "Montserrat Black";
     font-size:10vh;
-    src: url('/assets/fonts/MiltonKeynes.ttf') format('truetype');
+    src: url('/assets/fonts/Montserrat-Black.ttf') format('truetype');
 }
 .sticky {
     position: -webkit-sticky;

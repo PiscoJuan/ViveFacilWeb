@@ -1,47 +1,4 @@
 
-#body{
-    z-index: 50;
-    position: relative;
-    display: block;
-}
-#body2{
-    padding-top: 10px;
-    top: 0;
-    z-index: 10;
-    position: absolute;
-    ;
-}
-#body3{
-    padding-top: 10px;
-    top: 15%;
-    z-index: 40;
-    position: fixed;
-}
-#bodyMenos7{
-    padding-top: 10px;
-    top: 15%;
-    z-index: -7;
-    position: sticky;
-}
-#bodyMenos8{
-    padding-top: 10px;
-    top: 15%;
-    z-index: -8;
-    position: sticky;
-}
-#bodyMenos9{
-    padding-top: 10px;
-    top: 15%;
-    z-index: -9;
-    position: sticky;
-}
-#bodyMenos10{
-    padding-top: 10px;
-    top: 15%;
-    z-index: -10;
-    position: sticky;
-}
-
 // .carousel-control-prev-icon{
 //     background-color: #887BC6;
 //     padding: 10px;
@@ -57,6 +14,13 @@
     background-color: #FFE92F;
 }
 #tipoUsuario{
+    position: relative;
+    display: block;
+    z-index: 10;
+    // padding-bottom: 20vh;
+    // background-color: white;
+}
+#tipoUsuario2{
     position: relative;
     display: block;
     z-index: 10;
@@ -114,6 +78,22 @@
     margin-top: -25px;
     margin-left: -25px;
 }
+
+.plus-image3 {
+    left: 30%;
+    top: 40%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+.plus-image4 {
+    left: 60%;
+    top: 40%;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
 #servicios{
     background-color: white;
     color:#433689;
@@ -195,7 +175,6 @@
     margin-bottom: 0;
 }
 .milton{
-        font-weight: bold;
     font-family: "Montserrat Black";
     font-size:10vh;
     src: url('/assets/fonts/Montserrat-Black.ttf') format('truetype');

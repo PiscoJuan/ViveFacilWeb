@@ -38,6 +38,8 @@ export class EresProfesionalComponent  {
   copiaDocumentosNombre= null;
   // imgPerfil: string| null = null;
 
+  estadoRegistro="Registro exitoso"
+  infoRegistro="Su información fue enviada correctamente."
   formEdit: FormGroup = new FormGroup({
     nombre: new FormControl('', [Validators.required]),
     apellidos: new FormControl('', [Validators.required]),
@@ -109,23 +111,29 @@ export class EresProfesionalComponent  {
       //planilla_servicios: this.formEdit.value.planilla_servicios
       filesDocuments: [this.filePDF3]
     }
-    console.log("pendiente")
-    console.log(pendiente)
-    this.api.validarProveedorPendiente(this.formEdit.value.correo).subscribe((resp: any) => {
-      if (resp == 'nuevo') {
-        this.formService.crear_proveedor_pendiente(pendiente).subscribe((resp: any) => {
-          console.log("resp")
-          console.log(resp)
-        })
-      }
-      else {
-        console.log('Ya existe')
-      }
-    })
-
-
+    if(this.formEdit.value.nombre, this.formEdit.value.apellidos, this.formEdit.value.genero, this.formEdit.value.telefono, this.formEdit.value.cedula,  this.filePDF, this.formEdit.value.ciudad, this.formEdit.value.direccion, this.formEdit.value.correo, this.formEdit.value.descripcion, this.formEdit.value.licencia, this.filePDF2, this.formEdit.value.profesion, this.formEdit.value.ano_experiencia, this.formEdit.value.banco, this.formEdit.value.numero_cuenta, this.formEdit.value.tipo_cuenta, this.fileImgPerfil){
+      this.estadoRegistro='Registro exitoso'
+      this.estadoRegistro='Su información fue enviada correctamente.'
+      this.api.validarProveedorPendiente(this.formEdit.value.correo).subscribe((resp: any) => {
+        if (resp == 'nuevo') {
+          this.formService.crear_proveedor_pendiente(pendiente).subscribe((resp: any) => {
+            console.log("resp")
+            console.log(resp)
+          })
+        }
+        else {
+          console.log('Ya existe')
+        }
+      })
+    }else{
+      this.estadoRegistro='Error en el Registro'
+      this.infoRegistro='Faltan campos por llenar.'
+      console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+    }
+    
   }
-   establecerMensaje(mensaje: string, tipo: string) {
+
+  establecerMensaje(mensaje: string, tipo: string) {
     if (tipo === 'aceptar') {
       this.isAceptar = true;
       this.isNegar = false;

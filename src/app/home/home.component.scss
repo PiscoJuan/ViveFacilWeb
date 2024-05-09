@@ -116,14 +116,14 @@ img{
 }
 .masInfoMini{
     left: 9%;
-    top: 72%;
+    top: 70%;
     position: absolute;
-    margin-top: -15px;
-    margin-left: -15px;
+    margin-top: -10px;
+    margin-left: -10px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: #F2902A;
-    font-size: xx-small;
+    font-size: 0.70vh;
 }
 #blog{
     background-color: white;
@@ -204,7 +204,7 @@ img{
     margin-left: -25px;
     padding-left: 25px;
     padding-right: 25px;
-    font-size: medium;
+    font-size: x-small;
     background-color: #FFE92F;
 }
 .qrcode{
@@ -234,12 +234,10 @@ img{
 .preMilton{
     margin-bottom: 0;
     font-size:5vh;
-    font-weight:500;
 }
 .milton{
     font-family: "Montserrat Black";
     font-size:12vh;
-    font-weight: 700;
     src: url('/assets/fonts/MiltonKeynes.ttf') format('truetype');
 }
 

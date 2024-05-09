@@ -298,7 +298,7 @@
                         <div class="col-6 p-1 align-items-center">
                           <div class="col p-0">
                             <label for="inputNombre" class="form-label">
-                              <h3 class="m-0 p-0 fw-bold"><b>Cédula:</b></h3>
+                              <h3 class="m-0 p-0 fw-bold"><b>Cédula/RUC:</b></h3>
                             </label>
                           
                             <input
@@ -474,7 +474,7 @@
                         <div class="col-6 p-1 align-items-center">
                           <div class="col p-0">
                             <label for="inputNombre" class="form-label">
-                              <h3 class="m-0 p-0 fw-bold"><b>Copia de Cédula:</b></h3>
+                              <h3 class="m-0 p-0 fw-bold"><b>Copia de Cédula/RUC:</b></h3>
                             </label>
                             <a
                               href="https://tomesoft1.pythonanywhere.com{{
@@ -663,7 +663,7 @@
                         <div class="col-6 p-1 align-items-center">
                           <div class="col p-0">
                             <label for="inputNombre" class="form-label"
-                              ><h3 class="m-0 p-0 fw-bold"><b>Documentación:</b></h3></label
+                              ><h3 class="m-0 p-0 fw-bold"><b>Curriculum:</b></h3></label
                             >
                             <a
                               href="https://tomesoft1.pythonanywhere.com{{
@@ -1028,7 +1028,7 @@
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label">
-                            <h3 class="m-0 p-0 fw-bold"><b>Cédula:</b></h3>
+                            <h3 class="m-0 p-0 fw-bold"><b>Cédula/RUC:</b></h3>
                           </label>
                         
                           <input
@@ -1393,7 +1393,7 @@
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label"
-                            ><h3 class="m-0 p-0 fw-bold"><b>Documentación:</b></h3></label
+                            ><h3 class="m-0 p-0 fw-bold"><b>Curriculum:</b></h3></label
                           >
                           <a
                             href="https://tomesoft1.pythonanywhere.com{{
@@ -1508,15 +1508,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Registro exitoso</h5>
+        <h5 class="modal-title">{{estadoRegistro}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Su información fue enviada correctamente.</p>
+        <p>{{infoRegistro}}</p>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" *ngIf="estadoRegistroFlag">
         <button type="button" class="btn btn-primary" data-dismiss="modal" (click)=" refresh()">Confirmar</button>
       </div>
     </div>
@@ -1526,15 +1526,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Registro exitoso</h5>
+        <h5 class="modal-title">{{estadoRegistro}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Su información fue enviada correctamente.</p>
+        <p>{{infoRegistro}}</p>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" *ngIf="estadoRegistroFlag">
         <button type="button" class="btn btn-primary" data-dismiss="modal" (click)=" refresh()">Confirmar</button>
       </div>
     </div>

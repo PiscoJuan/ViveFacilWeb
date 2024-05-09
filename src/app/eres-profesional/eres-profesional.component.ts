@@ -40,6 +40,7 @@ export class EresProfesionalComponent  {
 
   estadoRegistro="Registro exitoso"
   infoRegistro="Su información fue enviada correctamente."
+  estadoRegistroFlag=true
   formEdit: FormGroup = new FormGroup({
     nombre: new FormControl('', [Validators.required]),
     apellidos: new FormControl('', [Validators.required]),
@@ -48,7 +49,7 @@ export class EresProfesionalComponent  {
       [
         Validators.required,
         Validators.minLength(10),
-        Validators.maxLength(10)
+        Validators.maxLength(13)
       ]),
     telefono: new FormControl('',
       [
@@ -66,7 +67,7 @@ export class EresProfesionalComponent  {
     numero_cuenta: new FormControl('', [Validators.required]),
     banco: new FormControl('', [Validators.required]),
     ano_experiencia: new FormControl('', [Validators.required]),
-    copiaLicencia: new FormControl(this.filePDF2, [Validators.required]),
+    copiaLicencia: new FormControl(this.filePDF2),
     documentos: new FormControl('', [Validators.required]),
     descripcion: new FormControl('', [Validators.required]),
     foto: new FormControl(this.fileImgPerfil, [Validators.required]),
@@ -113,7 +114,8 @@ export class EresProfesionalComponent  {
     }
     if(this.formEdit.value.nombre, this.formEdit.value.apellidos, this.formEdit.value.genero, this.formEdit.value.telefono, this.formEdit.value.cedula,  this.filePDF, this.formEdit.value.ciudad, this.formEdit.value.direccion, this.formEdit.value.correo, this.formEdit.value.descripcion, this.formEdit.value.licencia, this.filePDF2, this.formEdit.value.profesion, this.formEdit.value.ano_experiencia, this.formEdit.value.banco, this.formEdit.value.numero_cuenta, this.formEdit.value.tipo_cuenta, this.fileImgPerfil){
       this.estadoRegistro='Registro exitoso'
-      this.estadoRegistro='Su información fue enviada correctamente.'
+      this.infoRegistro='Su información fue enviada correctamente.'
+      this.estadoRegistroFlag=true
       this.api.validarProveedorPendiente(this.formEdit.value.correo).subscribe((resp: any) => {
         if (resp == 'nuevo') {
           this.formService.crear_proveedor_pendiente(pendiente).subscribe((resp: any) => {
@@ -128,6 +130,7 @@ export class EresProfesionalComponent  {
     }else{
       this.estadoRegistro='Error en el Registro'
       this.infoRegistro='Faltan campos por llenar.'
+      this.estadoRegistroFlag=false
       console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
     }
     

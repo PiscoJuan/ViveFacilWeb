@@ -53,4 +53,7 @@ export class FormularioService {
   getServicios(): any {
     return this.http.get(`${this.API_URL}/servicios`);
   }
+  getBancos(): any {
+    return this.http.get(`${this.API_URL}/bancos/`);
+  }
 }

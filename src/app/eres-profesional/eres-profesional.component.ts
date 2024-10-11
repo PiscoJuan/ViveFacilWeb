@@ -14,6 +14,7 @@ export class EresProfesionalComponent  {
   tipoCuentas = ['Ahorro', 'Corriente'];
   licencia = ['Si', 'No'];
   profesiones: any[] = [];
+
   total = 0
   arr_pendiente!: any[];
   arr_filtered_pendiente!: any[];
@@ -30,9 +31,12 @@ export class EresProfesionalComponent  {
   mostrar1=false;
   mostrar2=false;
   fileImgPerfil: File| null = null;
-  filePDF: File| null = null;
+  filePDF1: File| null = null;
   filePDF2: File| null = null;
   filePDF3: File| null = null;
+  fileImgPerfil1: File| null = null;
+  fileImgPerfil2: File| null = null;
+  fileImgPerfil3: File| null = null;
   copiaCedulaNombre= null;
   copiaLicenciaNombre= null;
   copiaDocumentosNombre= null;
@@ -61,20 +65,22 @@ export class EresProfesionalComponent  {
     direccion: new FormControl('', [Validators.required]),
     genero: new FormControl('', [Validators.required]),
     profesion: new FormControl('', [Validators.required]),
-    licencia: new FormControl('', [Validators.required]),
-    copiaCedula: new FormControl(this.filePDF, [Validators.required]),
+    copiaCedula: new FormControl(this.filePDF1 ? [this.filePDF1] : this.fileImgPerfil1 ? [this.fileImgPerfil1] : [] , [Validators.required]),
     tipo_cuenta: new FormControl('', [Validators.required]),
     numero_cuenta: new FormControl('', [Validators.required]),
     banco: new FormControl('', [Validators.required]),
     ano_experiencia: new FormControl('', [Validators.required]),
-    copiaLicencia: new FormControl(this.filePDF2),
+    licencia: new FormControl(''), //no es obliagtorio
+    copiaLicencia: new FormControl(this.filePDF2 || this.fileImgPerfil2), //no es obligatorio
     documentos: new FormControl('', [Validators.required]),
     descripcion: new FormControl('', [Validators.required]),
     foto: new FormControl(this.fileImgPerfil, [Validators.required]),
-    filesDocuments: new FormControl([this.filePDF3], [Validators.required]),
+    filesDocuments: new FormControl(this.filePDF3 ? [this.filePDF3] : this.fileImgPerfil3 ? [this.fileImgPerfil3] : [] , [Validators.required]),
     // foto: new FormControl('', [Validators.required]),
   });
+
   servicios: any[] = [];
+  bancos: any[] = [];
   constructor(private formService: FormularioService,private sanitizer: DomSanitizer, private api: ApiService) {
     this.formService.getServicios().subscribe((resp: any) => {
       console.log("resp")
@@ -87,7 +93,18 @@ export class EresProfesionalComponent  {
       console.log(resp)
         this.servicios= resp
     });
+
+    this.formService.getBancos().subscribe((resp: any) => {
+      console.log("bancos")
+      console.log(resp)
+      for (let i=0; i<resp.length; i++){
+        this.bancos= [...this.bancos, resp[i].nombre]
+      }
+    });
   }
+
+ 
+  
   onAceptar() {
     console.log(this.formEdit.value)
     let pendiente: any = {
@@ -96,13 +113,13 @@ export class EresProfesionalComponent  {
       genero: this.formEdit.value.genero,
       telefono: this.formEdit.value.telefono,
       cedula: this.formEdit.value.cedula,
-      copiaCedula: this.filePDF,
+      copiaCedula: this.filePDF1 ? this.fileImgPerfil1  : [],
       ciudad: this.formEdit.value.ciudad,
       direccion: this.formEdit.value.direccion,
       email: this.formEdit.value.correo,
       descripcion: this.formEdit.value.descripcion,
       licencia: this.formEdit.value.licencia,
-      copiaLicencia: this.filePDF2,
+      copiaLicencia: this.filePDF2 ? this.fileImgPerfil2 : [],
       profesion: this.formEdit.value.profesion,
       ano_experiencia: this.formEdit.value.ano_experiencia,
       banco: this.formEdit.value.banco,
@@ -110,9 +127,65 @@ export class EresProfesionalComponent  {
       tipo_cuenta: this.formEdit.value.tipo_cuenta,
       foto: this.fileImgPerfil,
       //planilla_servicios: this.formEdit.value.planilla_servicios
-      filesDocuments: [this.filePDF3]
+      filesDocuments: this.filePDF3 ? this.fileImgPerfil3  : []
     }
-    if(this.formEdit.value.nombre, this.formEdit.value.apellidos, this.formEdit.value.genero, this.formEdit.value.telefono, this.formEdit.value.cedula,  this.filePDF, this.formEdit.value.ciudad, this.formEdit.value.direccion, this.formEdit.value.correo, this.formEdit.value.descripcion, this.formEdit.value.licencia, this.filePDF2, this.formEdit.value.profesion, this.formEdit.value.ano_experiencia, this.formEdit.value.banco, this.formEdit.value.numero_cuenta, this.formEdit.value.tipo_cuenta, this.fileImgPerfil){
+
+    let camposFaltantes = [];
+
+    if (!this.formEdit.value.nombre) {
+      camposFaltantes.push('Nombre');
+    }
+    if (!this.formEdit.value.apellidos) {
+      camposFaltantes.push('Apellidos');
+    }
+    if (!this.formEdit.value.genero) {
+      camposFaltantes.push('Género');
+    }
+    if (!this.formEdit.value.telefono) {
+      camposFaltantes.push('Teléfono');
+    }
+    if (!this.formEdit.value.cedula) {
+      camposFaltantes.push('Cédula');
+    }
+    if (!this.formEdit.value.copiaCedula) {
+      camposFaltantes.push('Archivo Copia de Cédula (PDF o imagen)');
+    }
+    if (!this.formEdit.value.ciudad) {
+      camposFaltantes.push('Ciudad');
+    }
+    if (!this.formEdit.value.direccion) {
+      camposFaltantes.push('Dirección');
+    }
+    if (!this.formEdit.value.correo) {
+      camposFaltantes.push('Correo');
+    }
+    if (!this.formEdit.value.descripcion) {
+      camposFaltantes.push('Descripción');
+    }
+    if (!this.filePDF3 && !this.fileImgPerfil3 ) {
+      camposFaltantes.push('Archivo Curriculum');
+    }
+    if (!this.formEdit.value.profesion) {
+      camposFaltantes.push('Profesión');
+    }
+    if (!this.formEdit.value.ano_experiencia) {
+      camposFaltantes.push('Años de experiencia');
+    }
+    if (!this.formEdit.value.banco) {
+      camposFaltantes.push('Banco');
+    }
+    if (!this.formEdit.value.numero_cuenta) {
+      camposFaltantes.push('Número de cuenta');
+    }
+    if (!this.formEdit.value.tipo_cuenta) {
+      camposFaltantes.push('Tipo de cuenta');
+    }
+    if (!this.fileImgPerfil) {
+      camposFaltantes.push('Imagen de perfil');
+    }
+
+    // Verificar si hay campos faltantes
+    if (camposFaltantes.length === 0) {
       this.estadoRegistro='Registro exitoso'
       this.infoRegistro='Su información fue enviada correctamente.'
       this.estadoRegistroFlag=true
@@ -129,9 +202,9 @@ export class EresProfesionalComponent  {
       })
     }else{
       this.estadoRegistro='Error en el Registro'
-      this.infoRegistro='Faltan campos por llenar.'
+      this.infoRegistro=`Faltan los siguientes campos por llenar: ${camposFaltantes.join(', ')}`;
       this.estadoRegistroFlag=false
-      console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+      console.log("Error en el Registro")
     }
     
   }
@@ -253,7 +326,7 @@ export class EresProfesionalComponent  {
     if(file){
       this.extraerBase64(file)
       .then((imagen: any) => {
-        this.formEdit.value.copiaLicencia=file;
+        this.formEdit.value.documentos=file;
         this.filePDF3 = file;
         // this.imgPerfil = imagen.base;
       })
@@ -322,7 +395,7 @@ export class EresProfesionalComponent  {
       this.extraerBase64(file)
       .then((imagen: any) => {
         this.formEdit.value.copiaCedula=file;
-        this.filePDF = file;
+        this.filePDF1 = file;
         // this.imgPerfil = imagen.base;
       })
       .catch(err => console.log(err));
@@ -344,6 +417,23 @@ export class EresProfesionalComponent  {
       .catch(err => console.log(err));
     }
   };
+
+  loadFileFromDevice(event: any) {
+    const file: File = event.target.files[0];  
+    if (file) {
+      const fileType = file.type;  
+  
+      if (fileType.includes('image')) {
+        this.loadImageFromDevice(event); 
+        console.log("Archivo image")
+      } else if (fileType === 'application/pdf') {
+        this.loadPdfFromDevice(event); 
+        console.log("Archivo pdf")
+      } else {
+        console.error('Tipo de archivo no soportado. Solo se permiten imágenes o PDFs.');
+      }
+    }
+  } 
 
   refresh(): void {
     window.location.reload();

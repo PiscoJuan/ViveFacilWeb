@@ -243,8 +243,7 @@
                               formControlName="nombre"
                               class="form-control"
                               [ngClass]="isInvalidForm('nombre') ? 'is-invalid' : ''"
-                              [placeholder]="pendiente_seleccionada?.nombres"
-                              placeholder="Karla"
+                              placeholder="Ingrese sus nombres"
                               [value]="pendiente_seleccionada?.nombres"
                               style="background-color: #EEEEEE;"
                             />
@@ -264,7 +263,7 @@
                               formControlName="apellidos"
                               class="form-control"
                               [ngClass]="isInvalidForm('apellidos') ? 'is-invalid' : ''"
-                              [placeholder]="pendiente_seleccionada?.apellidos"
+                              placeholder="Ingrese sus apellidos" 
                               [value]="pendiente_seleccionada?.apellidos"
                               style="background-color: #EEEEEE;"
                             />
@@ -285,7 +284,7 @@
                               formControlName="correo"
                               class="form-control"
                               [ngClass]="isInvalidForm('email') ? 'is-invalid' : ''"
-                              [placeholder]="pendiente_seleccionada?.correo"
+                              placeholder="usuario@dominio.com"
                               [value]="pendiente_seleccionada?.correo"
                               style="background-color: #EEEEEE;"
                             />
@@ -307,7 +306,7 @@
                               class="form-control"
                               (keypress)="numberOnly($event)"
                               [ngClass]="isInvalidForm('cedula') ? 'is-invalid' : ''"
-                              [placeholder]="pendiente_seleccionada?.cedula"
+                              placeholder="0999999999"
                               [value]="pendiente_seleccionada?.cedula"
                               style="background-color: #EEEEEE;"
                             />
@@ -323,8 +322,9 @@
                               <h3 class="m-0 p-0 fw-bold"><b>Género:</b></h3>
                             </label>
                             <div>
+                              
                               <select
-                                class="form-select "
+                                class="custom-ng-select form-select"
                                 [ngClass]="isInvalidForm('genero') ? 'is-invalid' : ''"
                                 formControlName="genero"
                                 [value]="pendiente_seleccionada?.genero"
@@ -360,7 +360,7 @@
                               class="form-control"
                               (keypress)="numberOnlyPluss($event)"
                               [ngClass]="isInvalidForm('telefono') ? 'is-invalid' : ''"
-                              [placeholder]="pendiente_seleccionada?.telefono"
+                              placeholder="0999999999"
                               [value]="pendiente_seleccionada?.telefono"
                               style="background-color: #EEEEEE;"
                             />
@@ -377,7 +377,7 @@
                             </label>
                             <div>
                               <select
-                                class="form-select form-select-lg"
+                                class="custom-ng-select form-select"
                                 [ngClass]="isInvalidForm('ciudad') ? 'is-invalid' : ''"
                                 formControlName="ciudad"
                                 id="ge"
@@ -412,6 +412,7 @@
                               formControlName="direccion"
                               class="form-control"
                               [ngClass]="isInvalidForm('direccion') ? 'is-invalid' : ''"
+                              placeholder="Ingrese dirección"
                               [value]="pendiente_seleccionada?.direccion"
                               style="background-color: #EEEEEE;"
                               rows="2"
@@ -435,7 +436,7 @@
                               [ngClass]="
                                 isInvalidForm('descripcion') ? 'is-invalid' : ''
                               "
-                              [placeholder]="pendiente_seleccionada?.descripcion"
+                              placeholder="Ingrese descripción"
                               [value]="pendiente_seleccionada?.descripcion"
                               rows="5"
                               cols="25"
@@ -466,7 +467,7 @@
                               style="background-color: #EEEEEE;"
                             />
                             <div class="invalid-feedback">
-                              {{ getErrorMessage(formEdit, "copiaCedula") }}
+                              {{ getErrorMessage(formEdit, "foto") }}
                             </div>
                           </div>
                         </div>
@@ -480,7 +481,7 @@
                               href="https://tomesoft1.pythonanywhere.com{{
                                 pendiente_seleccionada?.copiaCedula
                               }}"
-                              download="newfilename.pdf"
+                              download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_copiaCedula.pdf"
                             >
                               <p  style="margin: 0;">
                                 {{ copiaCedulaNombre }}
@@ -488,13 +489,11 @@
                             </a>
                             <input
                               type="file"
-                              accept=".pdf"
+                              accept="image/*,.pdf"
                               formControlName="copiaCedula"
                               class="form-control"
-                              [ngClass]="
-                                isInvalidForm('copiaCedula') ? 'is-invalid' : ''
-                              "
-                              (change)="loadPdfFromDevice($event)"
+                              [ngClass]="isInvalidForm('copiaCedula') ? 'is-invalid' : ''"
+                              (change)="loadFileFromDevice($event)"
                               style="background-color: #EEEEEE;"
                             />
                             <div class="invalid-feedback">
@@ -510,7 +509,7 @@
                             >
                             <div>
                               <select
-                                class="form-select"
+                                class="custom-ng-select form-select"
                                 [ngClass]="isInvalidForm('licencia') ? 'is-invalid' : ''"
                                 formControlName="licencia"
                                 id="tienelicencia"
@@ -544,7 +543,7 @@
                               href="https://tomesoft1.pythonanywhere.com{{
                                 pendiente_seleccionada?.copiaLicencia
                               }}"
-                              download="newfilename2.pdf"
+                              download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_licencia.pdf"
                               style="margin: 0;"
                             >
                               <p style="margin: 0;">
@@ -553,11 +552,11 @@
                             </a>
                             <input
                               type="file"
-                              accept=".pdf"
+                              accept="image/*,.pdf"
                               formControlName="copiaLicencia"
                               class="form-control"
                               [ngClass]="isInvalidForm('copiaLicencia') ? 'is-invalid' : ''"
-                              (change)="loadPdf2FromDevice($event)"
+                              (change)="loadFileFromDevice($event)"
                               style="background-color: #EEEEEE;"
                             />
                             <div class="invalid-feedback">
@@ -580,7 +579,7 @@
                             <div>
                               <select
                                 formControlName="tipo_cuenta"
-                                class="form-select"
+                                class="custom-ng-select form-select"
                                 [ngClass]="isInvalidForm('tipo_cuenta') ? 'is-invalid' : ''"
                                 [value]="pendiente_seleccionada?.tipo_cuenta"
                                 aria-describedby="selectorServicioCrearFeedback"
@@ -603,30 +602,44 @@
                               id="selectorServicioCrearFeedback"
                               class="invalid-feedback"
                             >
-                              {{ getErrorMessage(formEdit, "profesion") }}
+                              {{ getErrorMessage(formEdit, "tipo_cuenta") }}
                             </div>
                           </div>
                         </div>
                         <!-- banco -->
                         <div class="col-6 p-1 align-items-center">
                           <div class="col p-0">
-                            <label for="inputNombre" class="form-label"
-                              ><h3 class="m-0 p-0 fw-bold"><b>Banco:</b></h3></label
+                            <label for="selectorServicioCrear" class="form-label">
+                              <h3 class="m-0 p-0 fw-bold"><b>Banco:</b></h3>
+                            </label>
+                            <div>
+                              <select
+                                formControlName="banco"
+                                class="custom-ng-select form-select"
+                                [ngClass]="isInvalidForm('banco') ? 'is-invalid' : ''"
+                                placeholder="Seleccione un banco"
+                                [value]="pendiente_seleccionada?.banco"
+                                aria-describedby="selectorServicioCrearFeedback"
+                                style="width: 100%;"
+                                >
+                                  <option selected disabled value="">
+                                    Elija un Banco...
+                                  </option>
+                                  <option *ngFor="let b of bancos" [id]="b" [value]="b" >
+                                    {{ b }}
+                                  </option>
+                              </select>
+                            </div>
+                            
+                            <div
+                              id="selectorServicioCrearFeedback"
+                              class="invalid-feedback"
                             >
-                            <input
-                              type="text"
-                              formControlName="banco"
-                              class="form-control"
-                              [ngClass]="isInvalidForm('banco') ? 'is-invalid' : ''"
-                              [placeholder]="pendiente_seleccionada?.banco"
-                              [value]="pendiente_seleccionada?.banco"
-                              style="background-color: #EEEEEE;"
-                            />
-                            <div class="invalid-feedback">
                               {{ getErrorMessage(formEdit, "banco") }}
                             </div>
                           </div>
                         </div>
+                        
                         <!-- Numero cuenta -->
                         <div class="col-12 p-1 justify-content-start">
                           <div class="col-6 p-1 align-items-start">
@@ -642,7 +655,7 @@
                                 [ngClass]="
                                   isInvalidForm('numero_cuenta') ? 'is-invalid' : ''
                                 "
-                                [placeholder]="pendiente_seleccionada?.numero_cuenta"
+                                placeholder="Ingrese # de cuenta"
                                 [value]="pendiente_seleccionada?.numero_cuenta"
                                 style="background-color: #EEEEEE;"
                               />
@@ -669,17 +682,17 @@
                               href="https://tomesoft1.pythonanywhere.com{{
                                 pendiente_seleccionada?.documentsPendientes[0]?.document
                               }}"
-                              download="newfilename3.pdf">
+                              download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_curriculum.pdf">
                               <p style="margin: 0;">
                                 {{ copiaDocumentosNombre }}
                               </p>
                             </a>
                             <input
                             type="file"
-                            accept=".pdf"
+                            accept="image/*,.pdf"
                               formControlName="documentos"
                               class="form-control"
-                              [ngClass]="isInvalidForm('copiaLicencia') ? 'is-invalid' : ''"
+                              [ngClass]="isInvalidForm('filesDocuments') ? 'is-invalid' : ''"
                               (change)="loadPdf3FromDevice($event)"
                               style="background-color: #EEEEEE;"
                             />
@@ -704,7 +717,7 @@
                                 [ngClass]="
                                   isInvalidForm('ano_experiencia') ? 'is-invalid' : ''
                                 "
-                                [placeholder]="pendiente_seleccionada?.ano_experiencia"
+                                placeholder="Ingrese años de experiencia"
                                 [value]="pendiente_seleccionada?.ano_experiencia"
                                 style="background-color: #EEEEEE;"
                               />
@@ -722,17 +735,22 @@
                                 ><h3 class="m-0 p-0 fw-bold"><b>Profesión:</b></h3></label
                               >
                               <ng-select
-                              style="background-color: #EEEEEE;"
+                                class="custom-ng-select form-select"
                                 [items]="profesiones"
-                                class="form-select"
-                                [ngClass]="
-                                  isInvalidForm('profesion') ? 'is-invalid' : ''
-                                "
+                                [ngClass]="isInvalidForm('profesion') ? 'is-invalid' : ''"
+                                [placeholder]="!formEdit.get('profesion')?.value ? 'Seleccione su profesión' : ''"
                                 formControlName="profesion"
                                 id="ge"
-                                
                                 aria-describedby="selectorServicioCrearFeedback"
-                                [multiple]="true">
+                                [multiple]="true"
+                              >
+
+                                <option selected disabled value="">
+                                  Selecciones sus profesiones...
+                                </option>
+                                <option *ngFor="let p of profesiones" [value]="p" >
+                                  {{ p }}
+                                </option>
                               </ng-select>
                               <div
                                 id="selectorServicioCrearFeedback"
@@ -741,13 +759,6 @@
                                 {{ getErrorMessage(formEdit, "profesion") }}
                               </div>
 
-
-                              <div
-                                id="selectorServicioCrearFeedback"
-                                class="invalid-feedback"
-                              >
-                                {{ getErrorMessage(formEdit, "profesion") }}
-                              </div>
                             </div>
                           </div>
                         </div>
@@ -774,11 +785,30 @@
   </div>
 </div>
 
-<div class="d-inline d-sm-none d-none d-sm-inline d-md-none" id="body2">
-  <!-- <div id="tipoUsuario" >
+<div class="modal" tabindex="-1" role="dialog" id="modalConfirmacion2">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{estadoRegistro}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{infoRegistro}}</p>
+      </div>
+      <div class="modal-footer" *ngIf="estadoRegistroFlag">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)=" refresh()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="d-inline d-sm-none d-none d-sm-inline d-md-none" id="body2">
+  <div id="tipoUsuario" >
       <img src="assets/imagenes/fdgdfhdfhhhhh.png" style="width: 100%;">
       <a href="https://play.google.com/store/apps/details?id=com.tome.app" class="invis btn btn-lg"></a>
-  </div> -->
+  </div> 
 
   <div id="outside" class="contenedor" style="padding-top: 10px;">
       <div class="row" style="font-size: 2.5vh;">
@@ -956,13 +986,13 @@
           <form [formGroup]="formEdit" >
               <div class="col p-0" >
                 <div class="row p-0 align-self-center">
-                  <!-- titulo 1 -->
+                  <!-- titulo 1 
                   <div class="col-12 p-0 d-flex flex-column justify-content-start" style="color:#433689; margin-bottom: 2vh;">
                     <h1 class="milton" style="font-size:5vh;">Formulario para Profesionales</h1>
                   </div>
                   <div class="col-12 p-0 align-self-start" >
                     <div class="row p-0 justify-content-around" style="margin: 1vw;">
-                      <!-- nombre -->
+                      <!-- nombre 
                       <div class="col-6 p-1 align-items-center" >
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label"
@@ -983,7 +1013,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- apellido -->
+                      <!-- apellido 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label"
@@ -1003,7 +1033,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- correo -->
+                      <!-- correo 
                       <div class="col-12 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputCorreo" class="form-label"
@@ -1024,7 +1054,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- cedula -->
+                      <!-- cedula 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label">
@@ -1046,7 +1076,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- genero -->
+                      <!-- genero 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="selectorServicioCrear" class="form-label">
@@ -1078,7 +1108,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- telefono -->
+                      <!-- telefono 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label"
@@ -1099,7 +1129,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- Ciudad -->
+                      <!-- Ciudad 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="selectorServicioCrear" class="form-label">
@@ -1131,7 +1161,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- direccion -->
+                      <!-- direccion 
                       <div class="col-12 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label">
@@ -1152,7 +1182,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- descripcion -->
+                      <!-- descripcion 
                       <div class="col-12 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label"
@@ -1180,7 +1210,7 @@
                   </div>
                   <div class="col-12 p-0 align-self-start" >
                     <div class="row p-0 justify-content-around" style="margin: 1vw;">
-                      <!-- foto -->
+                      <!-- foto 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label">
@@ -1200,7 +1230,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- copia Cedula -->
+                      <!-- copia Cedula 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label">
@@ -1210,7 +1240,7 @@
                             href="https://tomesoft1.pythonanywhere.com{{
                               pendiente_seleccionada?.copiaCedula
                             }}"
-                            download="newfilename.pdf"
+                            download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_copiaCedula.pdf"
                           >
                             <p  style="margin: 0;">
                               {{ copiaCedulaNombre }}
@@ -1218,7 +1248,7 @@
                           </a>
                           <input
                             type="file"
-                            accept=".pdf"
+                            accept="image/*,.pdf"
                             formControlName="copiaCedula"
                             class="form-control"
                             [ngClass]="
@@ -1232,7 +1262,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- licencia -->
+                      <!-- licencia 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="selectorServicioCrear" class="form-label"
@@ -1264,7 +1294,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- copia licencia -->
+                      <!-- copia licencia 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label">
@@ -1274,7 +1304,7 @@
                             href="https://tomesoft1.pythonanywhere.com{{
                               pendiente_seleccionada?.copiaLicencia
                             }}"
-                            download="newfilename2.pdf"
+                            download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_copiaLicencia.pdf"
                             style="margin: 0;"
                           >
                             <p style="margin: 0;">
@@ -1283,11 +1313,11 @@
                           </a>
                           <input
                             type="file"
-                            accept=".pdf"
+                            accept="image/*,.pdf"
                             formControlName="copiaLicencia"
                             class="form-control"
                             [ngClass]="isInvalidForm('copiaLicencia') ? 'is-invalid' : ''"
-                            (change)="loadPdf2FromDevice($event)"
+                            (change)="loadFileFromDevice($event)"
                             style="background-color: #EEEEEE;"
                           />
                           <div class="invalid-feedback">
@@ -1296,12 +1326,12 @@
                         </div>
                       </div>
                     </div>
-                    <!-- Titulo cuenta bancaria -->
+                    <!-- Titulo cuenta bancaria 
                     <div class="col-12 p-0 d-flex flex-row justify-content-start" style="color:#433689; margin-left: 1vw;">
                       <h1 class="milton" style="font-size:5vh; margin-bottom: 0;">Cuenta Bancaria</h1>
                     </div>
                     <div class="row p-0 justify-content-around" style="margin: 1vw; margin-top: 0;">
-                      <!-- tipo cuenta -->
+                      <!-- tipo cuenta 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="selectorServicioCrear" class="form-label">
@@ -1333,31 +1363,44 @@
                             id="selectorServicioCrearFeedback"
                             class="invalid-feedback"
                           >
-                            {{ getErrorMessage(formEdit, "profesion") }}
+                            {{ getErrorMessage(formEdit, "tipo_cuenta") }}
                           </div>
                         </div>
                       </div>
-                      <!-- banco -->
+                      <!-- banco 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
-                          <label for="inputNombre" class="form-label"
-                            ><h3 class="m-0 p-0 fw-bold"><b>Banco:</b></h3></label
+                          <label for="selectorServicioCrear" class="form-label">
+                            <h3 class="m-0 p-0 fw-bold"><b>Banco:</b></h3>
+                          </label>
+                          <div>
+                            <select
+                              formControlName="banco"
+                              class="form-select"
+                              [ngClass]="isInvalidForm('banco') ? 'is-invalid' : ''"
+                              placeholder="Seleccione un banco"
+                              [value]="pendiente_seleccionada?.banco"
+                              aria-describedby="selectorServicioCrearFeedback"style="width: 100%;"
+                              >
+                                <option selected disabled value="">
+                                  Elija un Banco...
+                                </option>
+                                <option *ngFor="let b of bancos" [value]="b.id" style="color: black;">
+                                  {{ b.nombre }}
+                                </option>
+                            </select>
+                          </div>
+                          
+                          <div
+                            id="selectorServicioCrearFeedback"
+                            class="invalid-feedback"
                           >
-                          <input
-                            type="text"
-                            formControlName="banco"
-                            class="form-control"
-                            [ngClass]="isInvalidForm('banco') ? 'is-invalid' : ''"
-                            [placeholder]="pendiente_seleccionada?.banco"
-                            [value]="pendiente_seleccionada?.banco"
-                            style="background-color: #EEEEEE;"
-                          />
-                          <div class="invalid-feedback">
                             {{ getErrorMessage(formEdit, "banco") }}
                           </div>
                         </div>
-                      </div>
-                      <!-- Numero cuenta -->
+                      </div>"
+                         
+                      <!-- Numero cuenta 
                       <div class="col-12 p-1 justify-content-start">
                         <div class="col-6 p-1 align-items-start">
                           <div class="col p-0 align-items-start">
@@ -1384,12 +1427,12 @@
                       </div>
                       
                     </div>
-                    <!-- Profesion -->
+                    <!-- Profesion 
                     <div class="col-12 p-0 d-flex flex-row justify-content-start" style="color:#433689; margin-left: 1vw;">
                       <h1 class="milton" style="font-size:5vh;">Profesión</h1>
                     </div>
                     <div class="row p-0 justify-content-around" style="margin: 1vw;  margin-top: 0;">
-                      <!-- documentacion -->
+                      <!-- documentacion 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label"
@@ -1399,14 +1442,14 @@
                             href="https://tomesoft1.pythonanywhere.com{{
                               pendiente_seleccionada?.documentsPendientes[0]?.document
                             }}"
-                            download="newfilename3.pdf">
+                            download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_curriculum.pdf">
                             <p style="margin: 0;">
                               {{ copiaDocumentosNombre }}
                             </p>
                           </a>
                           <input
                           type="file"
-                          accept=".pdf"
+                          accept="image/*,.pdf"
                             formControlName="documentos"
                             class="form-control"
                             [ngClass]="isInvalidForm('copiaLicencia') ? 'is-invalid' : ''"
@@ -1418,7 +1461,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- años de experiencia -->
+                      <!-- años de experiencia 
                       <div class="col-6 p-1 align-items-center">
                         <div class="col p-0">
                           <label for="inputNombre" class="form-label"
@@ -1434,7 +1477,7 @@
                               [ngClass]="
                                 isInvalidForm('ano_experiencia') ? 'is-invalid' : ''
                               "
-                              [placeholder]="pendiente_seleccionada?.ano_experiencia"
+                              placeholder="Inggrese años experiencia"
                               [value]="pendiente_seleccionada?.ano_experiencia"
                               style="background-color: #EEEEEE;"
                             />
@@ -1444,13 +1487,14 @@
                           </div>
                         </div>
                       </div>
-                      <!-- profesion -->
+                      <!-- profesion 
                       <div class="col-12 p-1 justify-content-start">
                         <div class="col-6 p-1 align-items-center">
                           <div class="col p-0">
                             <label for="selectorServicioCrear" class="form-label"
                               ><h3 class="m-0 p-0 fw-bold"><b>Profesión:</b></h3></label
                             >
+
                             <ng-select
                               style="background-color: #EEEEEE;"
                                 [items]="profesiones"
@@ -1539,4 +1583,4 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->

@@ -1,114 +1,267 @@
 .masInfo {
-    padding-left: 75px;
-    padding-right: 75px;
-    background-color: #FFE92F;
-}
-.preMilton{
-    margin-bottom: 0;
-}
-.milton{
-    font-family: "Montserrat Black";
-    font-size: 8vh;
-    font-weight: 700;
-    src: url('/assets/fonts/MiltonKeynes.ttf') format('truetype');
-}
-.column{
-    display: flex;
-    flex-flow: wrap;
-    justify-content:space-evenly;
-  }
-.erer{
-    p {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 7;
-        -webkit-box-orient: vertical;
-    }
-}
-.tarjeta{
-    background-color: white;
-    border-radius: 15px; 
-    margin:1vw;
-    padding: 1vw;
-    color: #666666;
-    h2{
-        font-size: x-large;
-    }
-}
-.imagentod{
-    padding-top: 2vh;
-}
-.invis {
-    left: 65%;
-    top: 66%;
-    position: absolute;
-    margin-top: -25px;
-    margin-left: -25px;
-    padding-left: 16vw;
-    padding-right: 17vw;
-    padding-top: 8vh;
-    background-color: #4422db;
-    opacity: 0%;
+  padding-left: 75px;
+  padding-right: 75px;
+  background-color: #FFE92F;
 }
 
-h3{
-    color: gray;
-    font-size: medium;
+.preMilton {
+  margin-bottom: 0;
+}
+
+.milton {
+  font-family: "Montserrat Black";
+  font-size: 8vh;
+  font-weight: 700;
+  src: url('/assets/fonts/MiltonKeynes.ttf') format('truetype');
+}
+
+.column {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+}
+
+.erer {
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.tarjeta {
+  background-color: white;
+  border-radius: 15px;
+  margin: 1vw;
+  padding: 1vw;
+  color: #666666;
+
+  h2 {
+    font-size: x-large;
+  }
+}
+
+.imagentod {
+  padding-top: 2vh;
+}
+
+.invis {
+  left: 65%;
+  top: 66%;
+  position: absolute;
+  margin-top: -25px;
+  margin-left: -25px;
+  padding-left: 16vw;
+  padding-right: 17vw;
+  padding-top: 8vh;
+  background-color: #4422db;
+  opacity: 0%;
+}
+
+h3 {
+  color: gray;
+  font-size: medium;
 }
 
 .masInfo0 {
-    padding-left: 75px;
-    padding-right: 75px;
-    background-color: #FFE92F;
-    color: #433689;
-    font-size: large;
+  padding-left: 75px;
+  padding-right: 75px;
+  background-color: #FFE92F;
+  color: #433689;
+  font-size: large;
 }
 
 .custom-ng-select {
-    background-color: #eeeeee;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
-    width: 100%;
-    transition: all 0.3s ease;
-  }
-  
-  .custom-ng-select:hover {
-    border-color: #4422db; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  }
-  
-  .custom-ng-select:focus-within {
-    outline: none;
-    border-color: #4422db; 
-    background-color: #fff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); 
-  }
-  
-  .custom-ng-select::placeholder {
-    color: #aaa;
-    font-style: italic;
-  }
-  
-  .custom-ng-select.is-invalid {
-    border-color: #dc3545; 
-    box-shadow: 0 0 6px rgba(220, 53, 69, 0.5); 
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.custom-ng-select:hover {
+  border-color: #4422db;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-ng-select:focus-within {
+  outline: none;
+  border-color: #4422db;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.custom-ng-select::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+.custom-ng-select.is-invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 6px rgba(220, 53, 69, 0.5);
+}
+
+.custom-ng-select[multiple] {
+  background-color: #f9f9f9;
+}
+
+.custom-ng-select[multiple] .ng-option {
+  padding: 8px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-ng-select[multiple] .ng-option:hover {
+  background-color: #f0f0f0;
+  color: #4422db;
+}
+
+h1 .milton {
+  font-size: 14vh;
+}
+
+
+@media (min-width: 400px) and (max-width: 768px) {
+  .d-md-inline {
+    display: inline !important;
   }
 
-  .custom-ng-select[multiple] {
-    background-color: #f9f9f9;
+  .flex-row {
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
   }
-  
-  .custom-ng-select[multiple] .ng-option {
-    padding: 8px;
-    background-color: #fff;
-    border-bottom: 1px solid #e0e0e0;
+
+  .col-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 100%;
   }
-  
-  .custom-ng-select[multiple] .ng-option:hover {
-    background-color: #f0f0f0;
-    color: #4422db;
+
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: 0;
   }
-  
+
+  .col-2 {
+    max-width: 25%;
+  }
+
+  .imagentod {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+
+  .btn-group-lg>.btn,
+  .btn-lg {
+    font-size: .8rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+  }
+
+  h1 .milton {
+    font-size: 10vh;
+  }
+
+  .col-3 {
+    max-width: 100%;
+  }
+
+  .tarjeta {
+    margin-bottom: 2vw;
+    padding: 2vw;
+  }
+
+  .col,
+  .col-1,
+  .col-10,
+  .col-11,
+  .col-12,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-auto,
+  .col-lg,
+  .col-lg-1,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-auto,
+  .col-md,
+  .col-md-1,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-auto,
+  .col-sm,
+  .col-sm-1,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-auto,
+  .col-xl,
+  .col-xl-1,
+  .col-xl-10,
+  .col-xl-11,
+  .col-xl-12,
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-4,
+  .col-xl-5,
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-8,
+  .col-xl-9,
+  .col-xl-auto {
+    width: 95%;
+  }
+
+  .col-6 {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .row {
+    display: flex;
+    max-width: 100%;
+  }
+
+  .justify-content-around {
+    justify-content: none;
+  }
+}

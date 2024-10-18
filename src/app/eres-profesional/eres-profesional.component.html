@@ -179,7 +179,7 @@
             <h1 class="preMilton" style="font-size: 6vh;">Últimas</h1>
         </div>
         <div class="d-flex flex-row justify-content-around" style=" color:#433689;">
-            <h1 class="milton" style=" font-size: 14vh;">Solicitudes</h1>
+            <h1 class="milton">Solicitudes</h1>
         </div>
         <div id="solicitudes" style="background-color: #EFEFF4; padding-left: 5vw;padding-right: 5vw; padding-top: 2vw;padding-bottom: 2vw;">
             <div class="erer row d-flex flex-row justify-content-around" >
@@ -481,7 +481,7 @@
                               href="https://tomesoft1.pythonanywhere.com{{
                                 pendiente_seleccionada?.copiaCedula
                               }}"
-                              download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_copiaCedula.pdf"
+                              [download]="getNombreArchivo('copiaCedula')"
                             >
                               <p  style="margin: 0;">
                                 {{ copiaCedulaNombre }}
@@ -543,7 +543,7 @@
                               href="https://tomesoft1.pythonanywhere.com{{
                                 pendiente_seleccionada?.copiaLicencia
                               }}"
-                              download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_licencia.pdf"
+                               [download]="getNombreArchivo('copiaLicencia')"
                               style="margin: 0;"
                             >
                               <p style="margin: 0;">
@@ -682,7 +682,7 @@
                               href="https://tomesoft1.pythonanywhere.com{{
                                 pendiente_seleccionada?.documentsPendientes[0]?.document
                               }}"
-                              download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_curriculum.pdf">
+                              [download]="getNombreArchivo('curriculum')">
                               <p style="margin: 0;">
                                 {{ copiaDocumentosNombre }}
                               </p>
@@ -693,7 +693,7 @@
                               formControlName="documentos"
                               class="form-control"
                               [ngClass]="isInvalidForm('filesDocuments') ? 'is-invalid' : ''"
-                              (change)="loadPdf3FromDevice($event)"
+                              (change)="loadFileFromDevice($event)"
                               style="background-color: #EEEEEE;"
                             />
                             <div class="invalid-feedback">

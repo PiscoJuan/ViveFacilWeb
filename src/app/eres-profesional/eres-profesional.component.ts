@@ -435,6 +435,20 @@ export class EresProfesionalComponent  {
     }
   } 
 
+  getNombreArchivo(tipo: string): string {
+    const { nombres, apellidos } = this.pendiente_seleccionada || {};
+    
+    const archivoUrl = this.pendiente_seleccionada?.[tipo]; 
+    const extension = archivoUrl ? archivoUrl.split('.').pop() : 'pdf'; 
+  
+    if (!nombres || !apellidos) {
+      return 'archivo_descargado';
+    }
+  
+    return `${nombres}_${apellidos}_${tipo}.${extension}`;
+  }
+  
+
   refresh(): void {
     window.location.reload();
   }

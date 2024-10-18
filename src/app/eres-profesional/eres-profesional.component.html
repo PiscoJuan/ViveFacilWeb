@@ -493,7 +493,7 @@
                               formControlName="copiaCedula"
                               class="form-control"
                               [ngClass]="isInvalidForm('copiaCedula') ? 'is-invalid' : ''"
-                              (change)="loadFileFromDevice($event)"
+                              (change)="loadFileFromDevice($event,'copiaCedula')"
                               style="background-color: #EEEEEE;"
                             />
                             <div class="invalid-feedback">
@@ -556,7 +556,7 @@
                               formControlName="copiaLicencia"
                               class="form-control"
                               [ngClass]="isInvalidForm('copiaLicencia') ? 'is-invalid' : ''"
-                              (change)="loadFileFromDevice($event)"
+                              (change)="loadFileFromDevice($event, 'copiaLicencia')"
                               style="background-color: #EEEEEE;"
                             />
                             <div class="invalid-feedback">
@@ -693,7 +693,7 @@
                               formControlName="documentos"
                               class="form-control"
                               [ngClass]="isInvalidForm('filesDocuments') ? 'is-invalid' : ''"
-                              (change)="loadFileFromDevice($event)"
+                              (change)="loadFileFromDevice($event, 'curriculum')"
                               style="background-color: #EEEEEE;"
                             />
                             <div class="invalid-feedback">

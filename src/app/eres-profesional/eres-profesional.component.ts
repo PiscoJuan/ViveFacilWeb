@@ -373,6 +373,45 @@ export class EresProfesionalComponent  {
     }
   };
 
+  loadImageFromDeviceCI(event:any) {
+    const file: File = event.target.files[0];
+    if(file){
+      this.extraerBase64(file)
+      .then((imagen: any) => {
+        this.formEdit.value.copiaCedula=file;
+        this.fileImgPerfil1 = file;
+        // this.imgPerfil = imagen.base;
+      })
+      .catch(err => console.log(err));
+    }
+  };
+
+  loadImageFromDeviceLI(event:any) {
+    const file: File = event.target.files[0];
+    if(file){
+      this.extraerBase64(file)
+      .then((imagen: any) => {
+        this.formEdit.value.copiaLicencia=file;
+        this.fileImgPerfil2 = file;
+        // this.imgPerfil = imagen.base;
+      })
+      .catch(err => console.log(err));
+    }
+  };
+
+  loadImageFromDeviceDocCurri(event:any) {
+    const file: File = event.target.files[0];
+    if(file){
+      this.extraerBase64(file)
+      .then((imagen: any) => {
+        this.formEdit.value.filesDocuments=file;
+        this.fileImgPerfil3 = file;
+        // this.imgPerfil = imagen.base;
+      })
+      .catch(err => console.log(err));
+    }
+  };
+
   numberOnly(event:any): boolean {
     const charCode = (event.which) ? event.which : event.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
@@ -387,7 +426,9 @@ export class EresProfesionalComponent  {
     }
     return true;
   }
-  loadPdfFromDevice(event:any) {
+
+  
+  loadPdfFromDeviceCI(event:any) {
     const file: File = event.target.files[0];
     console.log("Archivo de Copia de Cedula")
     console.log(event.target.files)
@@ -403,7 +444,7 @@ export class EresProfesionalComponent  {
   };
 
 
-  loadPdf2FromDevice(event:any) {
+  loadPdfFromDeviceLI(event:any) {
     const file: File = event.target.files[0];
     console.log("Archivo de Copia de Licencia")
     console.log(event.target.files)
@@ -418,20 +459,51 @@ export class EresProfesionalComponent  {
     }
   };
 
-  loadFileFromDevice(event: any) {
+  loadPdfFromDeviceDocCurri(event:any) {
+    const file: File = event.target.files[0];
+    console.log("Archivo de Copia de Curriculum")
+    console.log(event.target.files)
+    if(file){
+      this.extraerBase64(file)
+      .then((imagen: any) => {
+        this.formEdit.value.documentos=file;
+        this.filePDF3= file;
+        // this.imgPerfil = imagen.base;
+      })
+      .catch(err => console.log(err));
+    }
+  };
+
+  
+  loadFileFromDevice(event: any, formField: string) {
     const file: File = event.target.files[0];  
     if (file) {
       const fileType = file.type;  
-  
-      if (fileType.includes('image')) {
-        this.loadImageFromDevice(event); 
-        console.log("Archivo image")
-      } else if (fileType === 'application/pdf') {
-        this.loadPdfFromDevice(event); 
-        console.log("Archivo pdf")
-      } else {
-        console.error('Tipo de archivo no soportado. Solo se permiten imágenes o PDFs.');
-      }
+      if(formField== 'copiaCedula'){
+        if (fileType.includes('image')) {
+          this.loadImageFromDeviceCI(event); 
+          console.log("Archivo Cedula image")
+        } else if (fileType === 'application/pdf') {
+          this.loadPdfFromDeviceCI(event); 
+          console.log("Archivo Cedula pdf")
+        } 
+      }else if(formField== 'copiaLicencia'){
+        if (fileType.includes('image')) {
+          this.loadImageFromDeviceLI(event); 
+          console.log("Archivo Licencia image")
+        } else if (fileType === 'application/pdf') {
+          this.loadPdfFromDeviceLI(event); 
+          console.log("Archivo Licencia pdf")
+        } 
+      }else if(formField== 'curriculum'){
+        if (fileType.includes('image')) {
+          this.loadImageFromDeviceDocCurri(event); 
+          console.log("Archivo Curriculum image")
+        } else if (fileType === 'application/pdf') {
+          this.loadPdfFromDeviceDocCurri(event); 
+          console.log("Archivo Currilculum pdf")
+        } 
+      }   
     }
   } 
 

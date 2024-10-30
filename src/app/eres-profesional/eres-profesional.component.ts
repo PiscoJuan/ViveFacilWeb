@@ -65,7 +65,7 @@ export class EresProfesionalComponent  {
     direccion: new FormControl('', [Validators.required]),
     genero: new FormControl('', [Validators.required]),
     profesion: new FormControl('', [Validators.required]),
-    copiaCedula: new FormControl(this.filePDF1 ? [this.filePDF1] : this.fileImgPerfil1 ? [this.fileImgPerfil1] : [] , [Validators.required]),
+    copiaCedula: new FormControl(this.filePDF1 || [this.filePDF1] ? this.fileImgPerfil1 || [this.fileImgPerfil1] : [] , [Validators.required]),
     tipo_cuenta: new FormControl('', [Validators.required]),
     numero_cuenta: new FormControl('', [Validators.required]),
     banco: new FormControl('', [Validators.required]),
@@ -75,7 +75,8 @@ export class EresProfesionalComponent  {
     documentos: new FormControl('', [Validators.required]),
     descripcion: new FormControl('', [Validators.required]),
     foto: new FormControl(this.fileImgPerfil, [Validators.required]),
-    filesDocuments: new FormControl(this.filePDF3 ? [this.filePDF3] : this.fileImgPerfil3 ? [this.fileImgPerfil3] : [] , [Validators.required]),
+    filesDocuments: new FormControl( this.filePDF3 || this.fileImgPerfil3 ? [this.filePDF3 || this.fileImgPerfil3] : [], 
+      [Validators.required]),
     // foto: new FormControl('', [Validators.required]),
   });
 

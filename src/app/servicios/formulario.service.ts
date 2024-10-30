@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class FormularioService {
   API_URL = `https://tomesoft1.pythonanywhere.com`;
+  //API_URL = `http://127.0.0.1:8000`;
   constructor(private http: HttpClient) { }
 
   obtener_profesiones() {
@@ -48,6 +49,7 @@ export class FormularioService {
     console.log("LA COSAS ESAS LASMASD")
     console.log(pendiente)
     console.log(pendiente.get("foto"))
+    console.log(pendiente.get("copiaCedula"))
     return this.http.post(`${this.API_URL}/proveedor_pendiente/`, pendiente);
   }
   getServicios(): any {

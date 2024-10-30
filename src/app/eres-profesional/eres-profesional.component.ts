@@ -113,13 +113,13 @@ export class EresProfesionalComponent  {
       genero: this.formEdit.value.genero,
       telefono: this.formEdit.value.telefono,
       cedula: this.formEdit.value.cedula,
-      copiaCedula: this.filePDF1 ? this.fileImgPerfil1  : [],
+      copiaCedula: this.filePDF1 || this.fileImgPerfil1  || [],
       ciudad: this.formEdit.value.ciudad,
       direccion: this.formEdit.value.direccion,
       email: this.formEdit.value.correo,
       descripcion: this.formEdit.value.descripcion,
       licencia: this.formEdit.value.licencia,
-      copiaLicencia: this.filePDF2 ? this.fileImgPerfil2 : [],
+      copiaLicencia: this.filePDF2 || this.fileImgPerfil2 || [],
       profesion: this.formEdit.value.profesion,
       ano_experiencia: this.formEdit.value.ano_experiencia,
       banco: this.formEdit.value.banco,
@@ -127,7 +127,7 @@ export class EresProfesionalComponent  {
       tipo_cuenta: this.formEdit.value.tipo_cuenta,
       foto: this.fileImgPerfil,
       //planilla_servicios: this.formEdit.value.planilla_servicios
-      filesDocuments: this.filePDF3 ? this.fileImgPerfil3  : []
+      filesDocuments: this.filePDF3 || this.fileImgPerfil3  || [],
     }
 
     let camposFaltantes = [];

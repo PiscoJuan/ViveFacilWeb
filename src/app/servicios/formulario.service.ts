@@ -31,7 +31,6 @@ export class FormularioService {
       pendiente.append('copiaLicencia', data.copiaLicencia)
     }
     pendiente.append('profesion', data.profesion)
-    //ARREGLAR
     if( data.ano_experiencia != null){
       pendiente.append('ano_experiencia', data.ano_experiencia  as any)
     }
@@ -41,7 +40,7 @@ export class FormularioService {
     if(  data.foto != null){
       pendiente.append( 'foto', data.foto)
     }
-    //ARREGLAR
+
     if( data.filesDocuments != null){
       pendiente.append('filesDocuments', data.filesDocuments[0]  as any)
     }

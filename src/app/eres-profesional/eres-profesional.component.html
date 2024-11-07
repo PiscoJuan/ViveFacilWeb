@@ -690,14 +690,14 @@
                             <input
                             type="file"
                             accept="image/*,.pdf"
-                              formControlName="documentos"
+                              formControlName="filesDocuments"
                               class="form-control"
                               [ngClass]="isInvalidForm('filesDocuments') ? 'is-invalid' : ''"
                               (change)="loadFileFromDevice($event, 'curriculum')"
                               style="background-color: #EEEEEE;"
                             />
                             <div class="invalid-feedback">
-                              {{ getErrorMessage(formEdit, "documentos") }}
+                              {{ getErrorMessage(formEdit, "filesDocuments") }}
                             </div>
                           </div>
                         </div>

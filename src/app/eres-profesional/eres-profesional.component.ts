@@ -75,7 +75,7 @@ export class EresProfesionalComponent  {
     documentos: new FormControl('', [Validators.required]),
     descripcion: new FormControl('', [Validators.required]),
     foto: new FormControl(this.fileImgPerfil, [Validators.required]),
-    filesDocuments: new FormControl( this.filePDF3 || this.fileImgPerfil3 ? [this.filePDF3 || this.fileImgPerfil3] : [], 
+    filesDocuments: new FormControl([this.filePDF3 || this.fileImgPerfil3],
       [Validators.required]),
     // foto: new FormControl('', [Validators.required]),
   });
@@ -128,7 +128,7 @@ export class EresProfesionalComponent  {
       tipo_cuenta: this.formEdit.value.tipo_cuenta,
       foto: this.fileImgPerfil,
       //planilla_servicios: this.formEdit.value.planilla_servicios
-      filesDocuments: this.filePDF3 || this.fileImgPerfil3  || [],
+      filesDocuments: [this.filePDF3 || this.fileImgPerfil3] 
     }
 
     let camposFaltantes = [];
@@ -308,7 +308,7 @@ export class EresProfesionalComponent  {
           return 'Debe llenar este campo';
         }
         return '';
-      case 'ano_experiencia':
+      case 'filesDocuments':
         if (itemControl.hasError('required')) {
           return 'Debe llenar este campo';
         }
@@ -327,7 +327,7 @@ export class EresProfesionalComponent  {
     if(file){
       this.extraerBase64(file)
       .then((imagen: any) => {
-        this.formEdit.value.documentos=file;
+        this.formEdit.value.documentsPendientes=file;
         this.filePDF3 = file;
         // this.imgPerfil = imagen.base;
       })
@@ -405,7 +405,7 @@ export class EresProfesionalComponent  {
     if(file){
       this.extraerBase64(file)
       .then((imagen: any) => {
-        this.formEdit.value.filesDocuments=file;
+        this.formEdit.value.documentsPendientes=file;
         this.fileImgPerfil3 = file;
         // this.imgPerfil = imagen.base;
       })
@@ -467,7 +467,7 @@ export class EresProfesionalComponent  {
     if(file){
       this.extraerBase64(file)
       .then((imagen: any) => {
-        this.formEdit.value.documentos=file;
+        this.formEdit.value.documentsPendientes=file;
         this.filePDF3= file;
         // this.imgPerfil = imagen.base;
       })

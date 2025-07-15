@@ -190,7 +190,8 @@ export class EresProfesionalComponent  {
       this.estadoRegistro='Registro exitoso'
       this.infoRegistro='Su información fue enviada correctamente.'
       this.estadoRegistroFlag=true
-      this.api.validarProveedorPendiente(this.formEdit.value.correo).subscribe((resp: any) => {
+      this.api.validarProveedorPendiente(this.formEdit.value.correo).subscribe({
+        next: (resp: any) => {
         if (resp == 'nuevo') {
           this.formService.crear_proveedor_pendiente(pendiente).subscribe((resp: any) => {
             console.log("resp")
@@ -199,8 +200,18 @@ export class EresProfesionalComponent  {
         }
         else {
           console.log('Ya existe')
+          this.estadoRegistro='Error en el Registro'
+          this.infoRegistro='El correo enviado ya se encuenta registrado.'
+          this.estadoRegistroFlag=false
         }
-      })
+      },
+      error: (error)=>{
+        console.error('Error al conectarse al servidor');
+        this.estadoRegistro = 'Error en el Registro';
+        this.infoRegistro = 'Error al conectarse al servidor.';
+        this.estadoRegistroFlag = false;
+      }
+        })
     }else{
       this.estadoRegistro='Error en el Registro'
       this.infoRegistro=`Faltan los siguientes campos por llenar: ${camposFaltantes.join(', ')}`;

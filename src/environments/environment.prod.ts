@@ -1,3 +1,5 @@
+const baseUrl = 'https://tomesoft1.pythonanywhere.com';
 export const environment = {
-  production: true
+  apiUrl: `${baseUrl}`,
+  production: true,
 };

@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from "@angular/common/http";
-
+import { environment } from 'src/environments/environment'
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-
+  //API_URL = `https://tomesoft1.pythonanywhere.com`;
+  API_URL = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
   validarProveedorPendiente(mail: string) {
-    return this.http.get(`https://tomesoft1.pythonanywhere.com/proveedores_pendientes_email/${mail}`)
+    return this.http.get(this.API_URL+`/proveedores_pendientes_email/${mail}`)
   }
 
   validarDescuento(mail: string) {
-    return this.http.get(`https://tomesoft1.pythonanywhere.com/confirmar_descuento/${mail}`)
+    return this.http.get(this.API_URL+`/confirmar_descuento/${mail}`)
   }
 }

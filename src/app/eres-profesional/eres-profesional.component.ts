@@ -31,12 +31,12 @@ export class EresProfesionalComponent  {
   mostrar1=false;
   mostrar2=false;
   fileImgPerfil: File| null = null;
-  filePDF1: File| null = null;
-  filePDF2: File| null = null;
-  filePDF3: File| null = null;
-  fileImgPerfil1: File| null = null;
-  fileImgPerfil2: File| null = null;
-  fileImgPerfil3: File| null = null;
+  copiaCedulafilePDF: File| null = null;
+  copiaLicenciafilePDF: File| null = null;
+  curriculumfilePDF: File| null = null;
+  copiaCedulafileImg: File| null = null;
+  copiaLicenciafileImg: File| null = null;
+  curriculumfileImg: File| null = null;
   copiaCedulaNombre= null;
   copiaLicenciaNombre= null;
   copiaDocumentosNombre= null;
@@ -65,17 +65,17 @@ export class EresProfesionalComponent  {
     direccion: new FormControl('', [Validators.required]),
     genero: new FormControl('', [Validators.required]),
     profesion: new FormControl('', [Validators.required]),
-    copiaCedula: new FormControl(this.filePDF1 || [this.filePDF1] ? this.fileImgPerfil1 || [this.fileImgPerfil1] : [] , [Validators.required]),
+    copiaCedula: new FormControl(this.copiaCedulafilePDF || [this.copiaCedulafilePDF] ? this.copiaCedulafileImg || [this.copiaCedulafileImg] : [] , [Validators.required]),
     tipo_cuenta: new FormControl('', [Validators.required]),
     numero_cuenta: new FormControl('', [Validators.required]),
     banco: new FormControl('', [Validators.required]),
     ano_experiencia: new FormControl('', [Validators.required]),
     licencia: new FormControl(''), //no es obliagtorio
-    copiaLicencia: new FormControl(this.filePDF2 || this.fileImgPerfil2), //no es obligatorio
+    copiaLicencia: new FormControl(this.copiaLicenciafilePDF || this.copiaLicenciafileImg), //no es obligatorio
     documentos: new FormControl('', [Validators.required]),
     descripcion: new FormControl('', [Validators.required]),
     foto: new FormControl(this.fileImgPerfil, [Validators.required]),
-    filesDocuments: new FormControl([this.filePDF3 || this.fileImgPerfil3],
+    filesDocuments: new FormControl([this.curriculumfilePDF || this.curriculumfileImg],
       [Validators.required]),
     // foto: new FormControl('', [Validators.required]),
   });
@@ -114,13 +114,13 @@ export class EresProfesionalComponent  {
       genero: this.formEdit.value.genero,
       telefono: this.formEdit.value.telefono,
       cedula: this.formEdit.value.cedula,
-      copiaCedula: this.filePDF1 || this.fileImgPerfil1  || [],
+      copiaCedula: this.copiaCedulafilePDF || this.copiaCedulafileImg  || [],
       ciudad: this.formEdit.value.ciudad,
       direccion: this.formEdit.value.direccion,
       email: this.formEdit.value.correo,
       descripcion: this.formEdit.value.descripcion,
       licencia: this.formEdit.value.licencia,
-      copiaLicencia: this.filePDF2 || this.fileImgPerfil2 || [],
+      copiaLicencia: this.copiaLicenciafilePDF || this.copiaLicenciafileImg || [],
       profesion: this.formEdit.value.profesion,
       ano_experiencia: this.formEdit.value.ano_experiencia,
       banco: this.formEdit.value.banco,
@@ -128,11 +128,11 @@ export class EresProfesionalComponent  {
       tipo_cuenta: this.formEdit.value.tipo_cuenta,
       foto: this.fileImgPerfil,
       //planilla_servicios: this.formEdit.value.planilla_servicios
-      filesDocuments: [this.filePDF3 || this.fileImgPerfil3] 
+      filesDocuments: [this.curriculumfilePDF || this.curriculumfileImg] 
     }
 
     let camposFaltantes = [];
-
+    console.log("Validando campos ", this.formEdit.value)
     if (!this.formEdit.value.nombre) {
       camposFaltantes.push('Nombre');
     }
@@ -148,7 +148,7 @@ export class EresProfesionalComponent  {
     if (!this.formEdit.value.cedula) {
       camposFaltantes.push('Cédula');
     }
-    if (!this.formEdit.value.copiaCedula) {
+    if (!this.copiaCedulafilePDF && !this.copiaCedulafileImg) {
       camposFaltantes.push('Archivo Copia de Cédula (PDF o imagen)');
     }
     if (!this.formEdit.value.ciudad) {
@@ -163,7 +163,7 @@ export class EresProfesionalComponent  {
     if (!this.formEdit.value.descripcion) {
       camposFaltantes.push('Descripción');
     }
-    if (!this.filePDF3 && !this.fileImgPerfil3 ) {
+    if (!this.curriculumfilePDF && !this.curriculumfileImg ) {
       camposFaltantes.push('Archivo Curriculum');
     }
     if (!this.formEdit.value.profesion) {
@@ -183,6 +183,10 @@ export class EresProfesionalComponent  {
     }
     if (!this.fileImgPerfil) {
       camposFaltantes.push('Imagen de perfil');
+    }
+
+    if (this.formEdit.value.licencia == 'Si' && (!this.copiaLicenciafilePDF && !this.copiaLicenciafileImg)) {
+      camposFaltantes.push('Archivo Copia de Licencia (PDF o imagen)');
     }
 
     // Verificar si hay campos faltantes
@@ -333,7 +337,7 @@ export class EresProfesionalComponent  {
         return '';
     }
   }
-  loadPdf3FromDevice(event:any) {
+/*   loadPdf3FromDevice(event:any) {
     const file: File = event.target.files[0];
     if(file){
       this.extraerBase64(file)
@@ -344,7 +348,7 @@ export class EresProfesionalComponent  {
       })
       .catch(err => console.log(err));
     }
-  };
+  }; */
   extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
     try {
       const unsafeImg = window.URL.createObjectURL($event);
@@ -391,7 +395,7 @@ export class EresProfesionalComponent  {
       this.extraerBase64(file)
       .then((imagen: any) => {
         this.formEdit.value.copiaCedula=file;
-        this.fileImgPerfil1 = file;
+        this.copiaCedulafileImg = file;
         // this.imgPerfil = imagen.base;
       })
       .catch(err => console.log(err));
@@ -404,7 +408,7 @@ export class EresProfesionalComponent  {
       this.extraerBase64(file)
       .then((imagen: any) => {
         this.formEdit.value.copiaLicencia=file;
-        this.fileImgPerfil2 = file;
+        this.copiaLicenciafileImg = file;
         // this.imgPerfil = imagen.base;
       })
       .catch(err => console.log(err));
@@ -417,7 +421,7 @@ export class EresProfesionalComponent  {
       this.extraerBase64(file)
       .then((imagen: any) => {
         this.formEdit.value.documentsPendientes=file;
-        this.fileImgPerfil3 = file;
+        this.curriculumfileImg = file;
         // this.imgPerfil = imagen.base;
       })
       .catch(err => console.log(err));
@@ -448,7 +452,7 @@ export class EresProfesionalComponent  {
       this.extraerBase64(file)
       .then((imagen: any) => {
         this.formEdit.value.copiaCedula=file;
-        this.filePDF1 = file;
+        this.copiaCedulafilePDF = file;
         // this.imgPerfil = imagen.base;
       })
       .catch(err => console.log(err));
@@ -464,7 +468,7 @@ export class EresProfesionalComponent  {
       this.extraerBase64(file)
       .then((imagen: any) => {
         this.formEdit.value.copiaLicencia=file;
-        this.filePDF2 = file;
+        this.copiaLicenciafilePDF = file;
         // this.imgPerfil = imagen.base;
       })
       .catch(err => console.log(err));
@@ -479,7 +483,7 @@ export class EresProfesionalComponent  {
       this.extraerBase64(file)
       .then((imagen: any) => {
         this.formEdit.value.documentsPendientes=file;
-        this.filePDF3= file;
+        this.curriculumfilePDF= file;
         // this.imgPerfil = imagen.base;
       })
       .catch(err => console.log(err));

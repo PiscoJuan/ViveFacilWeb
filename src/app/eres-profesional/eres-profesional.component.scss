@@ -82,6 +82,32 @@ h3 {
   width: 100%;
   transition: all 0.3s ease;
 }
+::ng-deep span.ng-value-icon.left{
+  color: red;
+  margin-right: 0.5rem;
+}
+::ng-deep div.ng-value-container{
+  flex-direction: column;
+}
+::ng-deep .custom-ng-select ng-dropdown-panel{
+  background-color: white;
+}
+::ng-deep .custom-ng-select ng-dropdown-panel div.ng-option{
+  padding: 5px 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.035);
+}
+::ng-deep .custom-ng-select ng-dropdown-panel div.ng-option-selected{
+  padding: 0 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.035);
+  color: #4422db;
+}
+::ng-deep .custom-ng-select ng-dropdown-panel div.ng-option:hover{
+  background-color: #f0f0f0;
+  color: #4422db;
+}
+::ng-deep .custom-ng-select ng-dropdown-panel .ng-option-label{
+  text-wrap: initial;
+}
 
 .custom-ng-select:hover {
   border-color: #4422db;

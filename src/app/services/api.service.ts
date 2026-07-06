@@ -10,10 +10,10 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   validarProveedorPendiente(mail: string) {
-    return this.http.get(this.API_URL+`/proveedores_pendientes_email/${mail}`)
+    return this.http.get(this.API_URL+`/web/accounts/proveedores-pendientes/${mail}/`)
   }
 
   validarDescuento(mail: string) {
-    return this.http.get(this.API_URL+`/confirmar_descuento/${mail}`)
+    return this.http.get(this.API_URL+`/web/promotions/confirmar-descuento/${mail}/`)
   }
 }

@@ -10,7 +10,7 @@ export class FormularioService {
   constructor(private http: HttpClient) { }
 
   obtener_profesiones() {
-    return this.http.get(`${this.API_URL}/profesiones/`);
+    return this.http.get(`${this.API_URL}/web/catalog/profesiones/`);
   }
   crear_proveedor_pendiente(data: any): any {
     const pendiente = new FormData();
@@ -49,12 +49,12 @@ export class FormularioService {
     console.log(pendiente)
     console.log(pendiente.get("foto"))
     console.log(pendiente.get("copiaCedula"))
-    return this.http.post(`${this.API_URL}/proveedor_pendiente/`, pendiente);
+    return this.http.post(`${this.API_URL}/web/accounts/proveedores-pendientes/`, pendiente);
   }
   getServicios(): any {
-    return this.http.get(`${this.API_URL}/servicios`);
+    return this.http.get(`${this.API_URL}/web/catalog/servicios/`);
   }
   getBancos(): any {
-    return this.http.get(`${this.API_URL}/bancos/`);
+    return this.http.get(`${this.API_URL}/web/payments/bancos/`);
   }
 }

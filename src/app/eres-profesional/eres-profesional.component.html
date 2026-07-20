@@ -478,7 +478,7 @@
                               <h3 class="m-0 p-0 fw-bold"><b>Copia de Cédula/RUC:</b></h3>
                             </label>
                             <a
-                              href="https://tomesoft1.pythonanywhere.com{{
+                              href="{{
                                 pendiente_seleccionada?.copiaCedula
                               }}"
                               [download]="getNombreArchivo('copiaCedula')"
@@ -540,7 +540,7 @@
                               <h3 class="m-0 p-0 fw-bold"><b>Copia de licencia:</b></h3>
                             </label>
                             <a
-                              href="https://tomesoft1.pythonanywhere.com{{
+                              href="{{
                                 pendiente_seleccionada?.copiaLicencia
                               }}"
                                [download]="getNombreArchivo('copiaLicencia')"
@@ -679,7 +679,7 @@
                               ><h3 class="m-0 p-0 fw-bold"><b>Curriculum:</b></h3></label
                             >
                             <a
-                              href="https://tomesoft1.pythonanywhere.com{{
+                              href="{{
                                 pendiente_seleccionada?.documentsPendientes[0]?.document
                               }}"
                               [download]="getNombreArchivo('curriculum')">
@@ -1237,7 +1237,7 @@
                             <h3 class="m-0 p-0 fw-bold"><b>Copia de Cédula:</b></h3>
                           </label>
                           <a
-                            href="https://tomesoft1.pythonanywhere.com{{
+                            href="{{
                               pendiente_seleccionada?.copiaCedula
                             }}"
                             download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_copiaCedula.pdf"
@@ -1301,7 +1301,7 @@
                             <h3 class="m-0 p-0 fw-bold"><b>Copia de licencia:</b></h3>
                           </label>
                           <a
-                            href="https://tomesoft1.pythonanywhere.com{{
+                            href="{{
                               pendiente_seleccionada?.copiaLicencia
                             }}"
                             download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_copiaLicencia.pdf"
@@ -1439,7 +1439,7 @@
                             ><h3 class="m-0 p-0 fw-bold"><b>Curriculum:</b></h3></label
                           >
                           <a
-                            href="https://tomesoft1.pythonanywhere.com{{
+                            href="{{
                               pendiente_seleccionada?.documentsPendientes[0]?.document
                             }}"
                             download="{{ pendiente_seleccionada?.nombres }}_{{ pendiente_seleccionada?.apellidos }}_curriculum.pdf">

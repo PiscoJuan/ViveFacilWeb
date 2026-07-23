@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormularioService } from '../servicios/formulario.service';
@@ -29,6 +29,9 @@ export class FormularioComponent {
   habilitar = ''
   mostrar1=false;
   mostrar2=false;
+  enviando = false;
+  @ViewChild('successTrigger') successTrigger!: ElementRef<HTMLButtonElement>;
+  @ViewChild('errorTrigger') errorTrigger!: ElementRef<HTMLButtonElement>;
   fileImgPerfil: File| null = null;
   filePDF: File| null = null;
   filePDF2: File| null = null;
@@ -108,9 +111,20 @@ export class FormularioComponent {
     console.log("pendiente")
     console.log(pendiente)
 
-    this.formService.crear_proveedor_pendiente(pendiente).subscribe((resp: any) => {
-      console.log("resp")
-      console.log(resp)
+    // El POST sube varios binarios (cédula, licencia, foto, documentos): tarda.
+    // Mostramos el loader y recién abrimos el modal de éxito cuando el server responde.
+    this.enviando = true;
+    this.formService.crear_proveedor_pendiente(pendiente).subscribe({
+      next: (resp: any) => {
+        console.log("resp", resp)
+        this.enviando = false;
+        this.successTrigger.nativeElement.click();
+      },
+      error: (err: any) => {
+        console.log("error al crear proveedor pendiente", err)
+        this.enviando = false;
+        this.errorTrigger.nativeElement.click();
+      }
     })
 
   }

@@ -525,14 +525,18 @@
 
   <div class="modal-footer">
     <button
-      data-bs-target="#modalConfirmacion2"
-      data-bs-toggle="modal"
       class="btn btn-success"
+      [disabled]="enviando"
       (click)="onAceptar()"
     >
-      Enviar
+      <span *ngIf="enviando" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      {{ enviando ? 'Enviando...' : 'Enviar' }}
     </button>
   </div>
+
+  <!-- Disparadores ocultos: abren los modales sólo cuando el POST termina -->
+  <button #successTrigger type="button" class="d-none" data-bs-toggle="modal" data-bs-target="#modalConfirmacion2"></button>
+  <button #errorTrigger type="button" class="d-none" data-bs-toggle="modal" data-bs-target="#modalError"></button>
 
 
 <div class="modal" tabindex="-1" role="dialog" id="modalConfirmacion2">
@@ -540,7 +544,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Registro exitoso</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -548,7 +552,26 @@
         <p>Su información fue enviada correctamente.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)=" refresh()">Confirmar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)=" refresh()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modalError">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">No se pudo enviar</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Ocurrió un error al enviar tu información. Verifica tu conexión e inténtalo de nuevo.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
       </div>
     </div>
   </div>
